@@ -80,7 +80,6 @@ public class LoginActivity extends BaseActivity {
             return;
         }
 
-
         initImagePicker(true);
         initWebView();
     }
