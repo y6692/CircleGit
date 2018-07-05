@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (C) 2008 ZXing authors
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ -->
+<resources>
+  <color name="contents_text_trans00">#00000000</color>
+  <color name="contents_text_trans66">#66000000</color>
+  <color name="contents_text_trans7f">#7f000000</color>
+  <color name="contents_text">#ff000000</color>
+  <color name="encode_view">#ffffffff</color>
+  <color name="possible_result_points">#c0ffbd21</color> <!-- Android standard ICS color -->
+  <color name="result_minor_text">#ffc0c0c0</color>
+  <color name="result_points">#c099cc00</color> <!-- Android standard ICS color -->
+  <color name="result_text">#ffffffff</color>
+  <color name="result_view">#b0000000</color>
+  <color name="status_text">#ffffffff</color>
+  <color name="transparent">#00000000</color>
+  <color name="viewfinder_laser">#ffcc0000</color> <!-- Android standard ICS color -->
+  <color name="viewfinder_mask">#60000000</color>
+  
+  <color name="white">#FFFFFF</color>
+  <color name="red">#EE1111</color>
+  <color name="black">#ff000000</color>
+  <color name="grey">#FF999999</color>
+  <color name="light_grey">#99999999</color>
+  <color name="dark_grey">#FF666666</color>
+  <color name="grey_e">#FFeeeeee</color>
+  <!-- 透明颜色 -->
+  <color name="transparent_background">#00000000</color>
+  <color name="blue">#ff94c7e7</color>
+  <color name="green">#ff55c45f</color>
+  <color name="line_color">#959595</color>
+  <color name="bg_gray">#f1f1f1</color>
+  <color name="btn_pre">#92DAC7</color>
+  <color name="theme_color">#3eb4ff</color>
+  <color name="province_line_border">#C7C7C7</color>
+
+  <!-- common -->
+  <color name="half_transparent">#66000000</color>
+  <color name="half_transparent_white">#8fffffff</color>
+  <color name="border">#e6e6e6</color>
+  <color name="divider_c1">#c1c1c1</color>
+  <color name="divider_c9">#c9c9c9</color>
+  <color name="divider_df">#dfdfdf</color>
+  <color name="divider_dc">#dcdcdc</color>
+  <color name="bg_f2">#f2f2f2</color>
+  <color name="bg_f9">#f9f9f9</color>
+
+  <!-- font -->
+  <color name="font_black_aaa">#aaaaaa</color>
+  <color name="font_black_333">#333333</color>
+  <color name="font_black_666">#666666</color>
+  <color name="font_black_888">#888888</color>
+  <color name="font_black_999">#999999</color>
+  <color name="font_black_28">#282828</color>
+  <color name="font_black_d9">#d9d9d9</color>
+
+  <color name="library_white">#FFF</color>
+  <color name="library_bg_f2">#F2F2F2</color>
+
+  <!-- common -->
+  <color name="library_border">#E6E6E6</color>
+  <color name="library_theme_red">#FF535F</color>
+  <color name="library_theme_yellow">#FFD100</color>
+  <color name="library_theme_orange">#FF9000</color>
+  <color name="library_theme_blue">#0099ff</color>
+  <color name="library_theme_green">#50D2C2</color>
+  <color name="library_font_black_1D1D26">#1D1D26</color>
+  <color name="library_font_black_1D1D26_trans50">#801D1D26</color>
+
+
+  <color name="colorPrimary">#FFFFFF</color>
+  <color name="colorPrimaryDark">#ff000000</color>
+  <color name="colorAccent">#FF9000</color>
+
+  <color name="theme_red">#FF535F</color>
+  <color name="theme_yellow">#FFD100</color>
+  <color name="theme_orange">#FF9000</color>
+  <color name="theme_blue">#0099ff</color>
+  <color name="theme_green">#50D2C2</color>
+  <color name="theme_blue_157EFB">#157EFB</color>
+
+
+  <!--按钮正常点击不可用状态-->
+  <color name="btn_color_normal">#FFD100</color>
+  <color name="btn_color_press">#80FFD100</color>
+  <color name="btn_color_unable">#E4CFB0</color>
+
+  <!-- border -->
+  <color name="border_color">#bdbdbd</color>
+
+  <!-- tab -->
+  <color name="tab_color">#FF9000</color>
+
+  <!-- divider -->
+  <color name="divider">#F8F8F9</color>
+
+  <!-- bg -->
+  <color name="bg_00_trans1e">#1e000000</color>
+  <color name="bg_01">#010101</color>
+  <color name="bg_22">#222222</color>
+  <color name="bg_22_trans55">#55222222</color>
+  <color name="bg_25">#252525</color>
+  <color name="bg_f5">#f5f5f5</color>
+  <color name="bg_f6">#f6f6f6</color>
+  <color name="bg_f8">#F8F8F8</color>
+  <color name="bg_f0">#f0f0f0</color>
+  <color name="bg_eb">#ebebeb</color>
+  <color name="bg_e5">#e5e5e5</color>
+  <color name="bg_e6">#e6e6e6</color>
+  <color name="bg_67">#676767</color>
+  <color name="bg_dc">#dcdcdc</color>
+  <color name="bg_dd">#dddddd</color>
+  <color name="bg_ee">#eeeeee</color>
+  <color name="bg_ffd100">#ffd100</color>
+  <color name="bg_ff9000">#ff9000</color>
+  <color name="bg_ea8400">#ea8400</color>
+  <color name="bg_ff9412">#ff9412</color>
+  <color name="bg_f97979">#f97979</color>
+  <color name="bg_29313a">#29313a</color>
+  <color name="bg_007aad">#007aad</color>
+  <color name="bg_DAD9DB">#DAD9DB</color>
+
+
+  <!-- font -->
+  <color name="font_black_CD">#CDCDCD</color>
+  <color name="font_black_2f">#2F2F2F</color>
+  <color name="font_black_222">#222222</color>
+  <color name="font_black_46">#464646</color>
+  <color name="font_black_64">#646464</color>
+  <color name="font_black_66">#666666</color>
+  <color name="font_black_aa">#aaaaaa</color>
+  <color name="font_black_54">#545454</color>
+  <color name="font_black_e0">#e0e0e0</color>
+  <color name="font_black_26">#262626</color>
+  <color name="font_black_a8">#a8a8a8</color>
+  <color name="font_black_b3">#b3b3b3</color>
+  <color name="font_black_1D1D26">#1D1D26</color>
+  <color name="font_black_1D1D26_trans05">#0D1D1D26</color>
+  <color name="font_black_1D1D26_trans10">#1A1D1D26</color>
+  <color name="font_black_1D1D26_trans20">#331D1D26</color>
+  <color name="font_black_1D1D26_trans30">#4D1D1D26</color>
+  <color name="font_black_1D1D26_trans40">#661D1D26</color>
+  <color name="font_black_1D1D26_trans50">#801D1D26</color>
+  <color name="font_black_1D1D26_trans60">#991D1D26</color>
+  <color name="font_black_1D1D26_trans70">#B31D1D26</color>
+  <color name="font_black_1D1D26_trans80">#CC1D1D26</color>
+  <color name="font_black_1D1D26_trans90">#E61D1D26</color>
+  <color name="font_red_f00c1c">#f00c1c</color>
+  <color name="font_orange_ff9000">#ff9000</color>
+  <color name="font_orange_ff9412">#ff9412</color>
+  <color name="font_blue_157EFB">#157EFB</color>
+  <color name="font_black_bb">#bbbbbb</color>
+  <color name="font_black_ee">#eeeeee</color>
+  <color name="font_black_99">#999999</color>
+  <color name="font_black_44">#444444</color>
+  <color name="font_blue_31b4ff">#31b4ff</color>
+  <color name="font_blue_2C97DE">#2C97DE</color>
+  <color name="font_blue_006496">#006496</color>
+  <color name="font_black_808a8c">#808a8c</color>
+  <color name="font_orange_e6bb7c">#e6bb7c</color>
+  <color name="font_black_b3b0a8">#b3b0a8</color>
+  <color name="font_blue_0073FF">#0073FF</color>
+
+
+</resources>
