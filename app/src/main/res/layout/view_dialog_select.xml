@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/contents_text_trans00"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="@dimen/m5" >
+    
+    <TextView
+        android:id="@+id/mTv_Title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m68"
+        android:layout_marginTop="@dimen/m5"
+        android:background="@drawable/dialog_item_bg_only"
+        android:padding="@dimen/m10"
+        android:textColor="@color/font_blue_0073FF"
+        android:textSize="@dimen/f18"
+        android:gravity="center"
+        android:visibility="gone"/>
+
+    <ListView
+        android:id="@+id/dialog_list"
+        android:layout_width="match_parent"
+        android:dividerHeight="@dimen/m0.5"
+        android:divider="@color/bg_DAD9DB"
+        android:layout_marginTop="@dimen/m5"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+    <Button
+        android:id="@+id/mBtn_Cancel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m40"
+        android:layout_marginTop="@dimen/m5"
+        android:background="@drawable/dialog_item_bg_only"
+        android:text="取消"
+        android:gravity="center"
+        android:textColor="@color/font_black_999"
+        android:textSize="@dimen/f18" />
+
+</LinearLayout>

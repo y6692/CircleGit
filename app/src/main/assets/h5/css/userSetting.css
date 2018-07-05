@@ -1,0 +1,27 @@
+body{
+    background-color: #f9f9f9;
+}
+.mui-content>.mui-table-view{
+    margin-bottom: 20px;
+}
+.mui-content{
+    background-color: #f9f9f9;
+    font-size: 18px;
+}
+.clear-num{
+    position: absolute;
+    right: 40px;
+    font-size: 16px;
+    color: #878787;
+}
+.mui-exit{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin-right: -50px;
+}
+.mui-switch.mui-active{
+    border-color:#31b4ff;
+    background-color: #31b4ff;
+}

@@ -1,0 +1,267 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_f5"
+    android:orientation="vertical"
+    android:padding="0dp" >
+
+    <include layout="@layout/layout_head"/>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/m12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+
+        <View style="@style/divider_1px"/>
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/m12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            >
+            <TextView
+                android:id="@+id/quan0"
+                android:textSize="@dimen/f15"
+                android:textColor="@color/font_black_333"
+                android:textColorHint="@color/font_black_d9"
+                android:padding="@dimen/m12"
+                android:text="我的圈名片"
+                android:maxLength="15"
+                android:layout_width="@dimen/m200"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:background="@color/transparent"
+                android:gravity="top"/>
+
+            <ImageView
+                android:id="@+id/yjt0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/m12"
+                android:padding="@dimen/m10"
+                android:src="@drawable/yjt"
+                android:layout_gravity="center_vertical"/>
+        </RelativeLayout>
+
+        <View style="@style/divider_1px"/>
+
+        <RelativeLayout
+            android:id="@+id/qcy"
+            android:layout_marginTop="@dimen/m12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            >
+
+
+            <LinearLayout
+                android:id="@+id/ll_head"
+                android:paddingLeft="@dimen/m12"
+                android:paddingRight="@dimen/m12"
+                android:paddingTop="@dimen/m8"
+                android:paddingBottom="@dimen/m8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.sylar.unit.CircularImage
+                    android:id="@+id/img"
+                    android:layout_width="@dimen/m44"
+                    android:layout_height="@dimen/m44"
+                    android:src="@drawable/memicon"
+                    />
+
+                <com.sylar.unit.CircularImage
+                    android:id="@+id/img2"
+                    android:layout_width="@dimen/m44"
+                    android:layout_height="@dimen/m44"
+                    android:src="@drawable/memicon"
+                    />
+
+                <ImageView
+                    android:id="@+id/imgAdd"
+                    android:layout_width="@dimen/m44"
+                    android:layout_height="@dimen/m44"
+                    android:layout_marginLeft="@dimen/m100"
+                    android:src="@drawable/inviteicon"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/txtAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/m48"
+                android:layout_marginTop="@dimen/m23"
+                android:src="@drawable/inviteicon"/>
+
+            <ImageView
+                android:id="@+id/yjt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/m12"
+                android:layout_marginTop="@dimen/m10"
+                android:padding="@dimen/m10"
+                android:src="@drawable/yjt"
+                android:layout_gravity="center_vertical"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <View style="@style/divider_1px"/>
+
+
+
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/m12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/et_name"
+            android:textSize="@dimen/f15"
+            android:textColor="@color/font_black_333"
+            android:textColorHint="@color/font_black_d9"
+            android:padding="@dimen/m12"
+            android:text="圈子名称"
+            android:maxLength="15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:background="@color/transparent"
+            android:gravity="top"/>
+
+        <ImageView
+            android:id="@+id/yjt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/m12"
+            android:padding="@dimen/m10"
+            android:src="@drawable/yjt"
+            android:layout_gravity="center_vertical"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/m12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+
+        <View style="@style/divider_1px"/>
+
+        <TextView
+            android:id="@+id/quan1"
+            android:textSize="@dimen/f15"
+            android:textColor="@color/font_black_333"
+            android:textColorHint="@color/font_black_d9"
+            android:padding="@dimen/m12"
+            android:text="置顶聊天"
+            android:maxLength="15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:background="@color/transparent"
+            android:gravity="top"/>
+        <View style="@style/divider_1px"/>
+
+        <TextView
+            android:id="@+id/quan2"
+            android:textSize="@dimen/f15"
+            android:textColor="@color/font_black_333"
+            android:textColorHint="@color/font_black_d9"
+            android:padding="@dimen/m12"
+            android:text="消息免打扰"
+            android:maxLength="15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:background="@color/transparent"
+            android:gravity="top"/>
+
+        <View style="@style/divider_1px"/>
+
+        <TextView
+            android:id="@+id/quan3"
+            android:textSize="@dimen/f15"
+            android:textColor="@color/font_black_333"
+            android:textColorHint="@color/font_black_d9"
+            android:padding="@dimen/m12"
+            android:text="查找聊天内容"
+            android:maxLength="15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:background="@color/transparent"
+            android:gravity="top"/>
+
+    </LinearLayout>
+
+    <View style="@style/divider_1px"/>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/m12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+
+        <View style="@style/divider_1px"/>
+
+        <TextView
+            android:id="@+id/quan4"
+            android:textSize="@dimen/f15"
+            android:textColor="@color/font_black_333"
+            android:textColorHint="@color/font_black_d9"
+            android:padding="@dimen/m12"
+            android:text="清空聊天记录"
+            android:maxLength="15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:background="@color/transparent"
+            android:gravity="top"/>
+
+    </LinearLayout>
+
+
+	 <Button
+            android:id="@+id/exitBtn"
+            style="@style/white20Text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/m10"
+            android:layout_marginBottom="@dimen/m20"
+            android:layout_marginLeft="@dimen/m50"
+            android:layout_marginRight="@dimen/m50"
+            android:background="@drawable/btn"
+            android:text="退出该圈子" />
+
+    <Button
+        android:id="@+id/delRoom"
+        style="@style/white20Text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/m10"
+        android:layout_marginBottom="@dimen/m20"
+        android:layout_marginLeft="@dimen/m50"
+        android:layout_marginRight="@dimen/m50"
+        android:background="@drawable/btn"
+        android:text="解散圈子" />
+
+</LinearLayout>

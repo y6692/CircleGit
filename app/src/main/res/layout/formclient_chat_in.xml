@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/contents_text_trans00"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical" >
+   <TextView
+       android:id="@+id/formclient_row_date"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+       android:paddingTop="@dimen/m10"
+       android:textColor="@color/font_black_a8"/>
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="@dimen/m5"
+	        android:gravity="left"
+	        android:orientation="horizontal"
+	        android:paddingRight="@dimen/m8" >
+	     <com.sylar.unit.CircularImage
+	            android:id="@+id/headImg"
+	            android:layout_width="@dimen/m40"
+	            android:layout_height="@dimen/m40"
+	            android:layout_marginBottom="@dimen/m5"
+	            android:layout_marginLeft="@dimen/m20"
+	            android:layout_marginRight="@dimen/m10"
+	            android:layout_marginTop="@dimen/m5"
+	            android:scaleType="fitXY" />
+	        <LinearLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical" >
+				      <TextView
+				          android:id="@+id/formclient_row_userid"
+				          android:layout_width="wrap_content"
+				          android:layout_height="wrap_content"
+				          android:layout_marginBottom="@dimen/m3" />
+				      <TextView
+				         android:id="@+id/formclient_row_msg"
+				         android:layout_width="wrap_content"
+				         android:layout_height="wrap_content"
+				         android:layout_gravity="center_vertical"
+				         android:background="@drawable/msg_bg"
+				         android:gravity="center_vertical"
+				         android:maxWidth="@dimen/m200"
+				         android:paddingBottom="@dimen/m5"
+				         android:paddingLeft="@dimen/m10"
+				         android:paddingRight="@dimen/m5"
+				         android:paddingTop="@dimen/m5"
+				         android:textColor="@color/font_black_808a8c"
+				         android:textSize="@dimen/f15" />
+		            <ImageView
+		                android:id="@+id/imgView"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center"
+		                android:background="@drawable/msg_bg"
+		                android:paddingBottom="@dimen/m5"
+		                android:paddingLeft="@dimen/m10"
+		                android:paddingRight="@dimen/m5"
+		                android:paddingTop="@dimen/m5"
+		                android:visibility="gone" />			      
+	  		</LinearLayout>
+    </LinearLayout>
+</LinearLayout>

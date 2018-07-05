@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>个人信息</title>
+    <link href="../../css/mui.min.css" rel="stylesheet" />
+    <link href="../../css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/userInfo.css">
+    <script src="../../js/md5.js"></script>
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/mui.min.js"></script>
+    <script src="../../js/spin.min.js"></script>
+    <script src="../../js/jquery.spin.js"></script>
+    <script src="../../js/common/app.js"></script>
+    <script src="../../js/common/tool.js"></script>
+    <script src="../../js/htmljs/userInfo.js"></script>
+
+</head>
+<body>
+<div class="load"></div>
+<header class="circle-head">
+    <div class="circle-head-left">
+        <span class="circle-head-text" onclick="window.history.go(-1);">返回</span>
+    </div>
+    <div class="circle-head-center">
+        <span class="circle-title">个人信息</span>
+    </div>
+    <div class="circle-head-right">
+        <span class="circle-head-text" id="headrightskip">跳过</span>
+    </div>
+</header>
+
+<div class="mui-content">
+    <div  class="mui-content-padded">
+        <div class="div-touxiang">
+            <a href="#picture">
+                <img src="../../img/register/touxiang.png" id="head">
+            </a>
+
+        <div>头像</div>
+        </div>
+        <div class="mui-input-row ">
+            <input id='username' type="text" class="mui-input-clear mui-input"  placeholder="昵称">
+        </div>
+        <div class="mui-input-row">
+            <a id="xiala-a"><img src="../../img/register/xiala.png"></a>
+            <input  id="usersex" type="text"  class="mui-input" placeholder="性别" readonly >
+
+        </div>
+        <div id="selectsex">
+            <div class="div-sex" id="man">男<br></div><hr>
+            <div class="div-sex" id="woman">女</div>
+        </div>
+        <div class="mui-input-row">
+            <input id="useraddress"  type="text" class="mui-input-clear mui-input" placeholder="地址">
+        </div>
+        <br/>
+        <br/>
+        <button id='submitclick' class="mui-btn mui-btn-block mui-btn-primary">完成注册</button>
+    </div>
+    <div id="picture" class="mui-popover mui-popover-action mui-popover-bottom">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a href="#">拍照</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a href="#">相册</a>
+            </li>
+        </ul>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a href="#picture"><b>取消</b></a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

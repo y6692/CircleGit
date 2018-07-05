@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+	android:background="@color/white">
+
+
+	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+		<LinearLayout
+			android:id="@+id/ll_head"
+			android:paddingLeft="@dimen/m12"
+			android:paddingRight="@dimen/m12"
+			android:paddingTop="@dimen/m8"
+			android:paddingBottom="@dimen/m8"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<com.sylar.unit.CircularImage
+				android:id="@+id/contacthead"
+				android:scaleType="centerCrop"
+				android:layout_width="@dimen/m44"
+				android:layout_height="@dimen/m44"
+				android:src="@mipmap/head"
+				/>
+		</LinearLayout>
+
+    	<TextView 
+	        android:id="@+id/message_contact_name"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="@dimen/m80"
+			android:gravity="left"
+			android:textColor="@color/font_black_66"
+			android:textSize="@dimen/f8" />
+
+		</RelativeLayout>
+
+	</LinearLayout>
+    
+    <ImageView   
+	    android:layout_width="fill_parent"  
+	    android:layout_height="@dimen/m1"
+	    android:background="@color/bg_ee" />
+    
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/m44"
+    android:background="@color/font_black_28"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:id="@+id/ll_root">
+
+    <LinearLayout
+        android:id="@+id/ll_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/search_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/btn_back"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/m12"
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/search_et_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/m6"
+            android:layout_marginTop="@dimen/m6"
+            android:layout_marginRight="@dimen/m12"
+            android:background="@drawable/bg_view_search_edittext"
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="@dimen/m12"
+            android:hint="搜索"
+            android:maxLength="15"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingLeft="@dimen/m12"
+            android:paddingRight="@dimen/m36"
+            android:textColorHint="@color/font_black_999"
+            android:textSize="@dimen/f14" />
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/search_iv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:paddingRight="@dimen/m18"
+            android:src="@mipmap/sanchu_icon" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingRight="@dimen/m12"
+        android:text="@string/cancel"
+        android:textColor="@color/white"
+        android:textSize="@dimen/f16" />
+
+</LinearLayout>

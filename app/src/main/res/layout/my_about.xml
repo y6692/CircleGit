@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_f5"
+     >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        android:text="关于我们"
+        android:textColor="@color/white"
+        android:textSize="@dimen/m20"
+        android:background="@drawable/dhl"
+        android:id="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/fh"
+        android:layout_width="@dimen/m41"
+        android:layout_height="@dimen/m49"
+        android:layout_marginLeft="@dimen/m10"
+        android:layout_marginTop="@dimen/m10"
+        android:padding="@dimen/m15"
+        android:cropToPadding="true"
+        android:src="@drawable/fh"
+        />
+
+    <ImageView
+        android:layout_width="@dimen/m150"
+        android:layout_height="@dimen/m187"
+        android:padding="@dimen/m15"
+        android:cropToPadding="true"
+        android:src="@drawable/logo"
+        android:layout_marginTop="@dimen/m14"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/m20"
+        android:layout_marginRight="@dimen/m20"
+        android:layout_marginTop="@dimen/m260"
+        android:text="        江苏中盈高科智能信息股份有限公司是一家新三板挂牌上市企业（简称中盈高科，股票代码837274），成立于2000年3月，注册资金3500万，源于1994年组建的一个计算机销售维修服务部门，并逐步从IT产品销售转型为IT应用服务的江苏省民营高科技企业。公司以建筑智能化规划设计与施工、绿色智能建筑整体解决方案提供及综合服务、智能信息系统集成以及城市信息化为主导，集咨询、规划、设计、研发、项目实施、运维、集成、服务为一体，是一家定位为计算机信息技术系统集成的创新型科技企业。公司2015年12月完成股改，2016年5月10日正式挂牌新三板，从此走上资本化道路，也将越来越有实力地为绿色智能建筑、城市信息化和生活智慧化服务！"
+        android:textColor="@color/black"
+        android:textSize="@dimen/f16"
+       />
+
+</RelativeLayout>

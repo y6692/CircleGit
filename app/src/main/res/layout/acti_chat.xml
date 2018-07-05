@@ -1,0 +1,193 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_menu"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_f5"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="0dp" >
+
+    <include layout="@layout/layout_head"/>
+
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_bg"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/leftBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:padding="@dimen/m10"
+            android:src="@drawable/btn_back"
+            android:layout_gravity="center_vertical"/>
+        <TextView
+            android:id="@+id/titleView"
+            android:textColor="@color/white"
+            android:textSize="@dimen/f8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="聊天"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:padding="@dimen/m5"/>
+        <ImageView
+            android:id="@+id/rightBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:paddingLeft="@dimen/m20"
+            android:paddingRight="@dimen/m10"
+            android:src="@drawable/buttom_btn_contacts_icon"
+            android:layout_gravity="center_vertical|right" />
+    </FrameLayout>
+
+    <com.sylar.view.MyListView
+        android:id="@+id/listView"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/bg_gray"
+        android:divider="@color/contents_text_trans00"
+        android:listSelector="@color/contents_text_trans00"
+        android:paddingBottom="@dimen/m10"
+        android:transcriptMode="normal" />
+
+    <LinearLayout
+        android:id="@+id/edicting_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:padding="@dimen/m3">
+        <ImageView
+            android:id="@+id/sendBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/m10"
+            android:padding="@dimen/m10"
+            android:src="@drawable/icon_voice" />
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <EditText
+                android:id="@+id/msgText"
+                style="@android:style/TextAppearance.Medium"
+                android:layout_width="@dimen/m210"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="0dp"
+
+
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:maxLength="140"
+                android:maxLines="3"
+                android:padding="@dimen/m12"
+                android:textColor="@color/black" />
+
+            <com.sylar.view.RecordButton
+                android:id="@+id/recordBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/btn_bg"
+                android:minHeight="@dimen/m35"
+                android:text="按住录音"
+                android:textColor="#fff"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/expBtn"
+            android:layout_width="@dimen/m50"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/m10"
+            android:layout_marginLeft="0dp"
+            android:src="@drawable/icon_smile" />
+
+        <ImageView
+            android:id="@+id/moreBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/m10"
+            android:layout_marginLeft="0dp"
+            android:src="@drawable/icon_pic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/moreLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        >
+
+        <Button
+            android:id="@+id/takePicBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_take_pic"
+            android:text="拍摄"
+            android:padding="@dimen/m10"
+            android:layout_margin="@dimen/m5"
+            android:textSize="@dimen/f15"
+            android:background="@drawable/input_edittext_bg"
+            android:textColor="@color/grey" />
+        <Button
+            android:id="@+id/chosePicBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_chose_pic"
+            android:text="照片"
+            android:padding="@dimen/m10"
+            android:layout_margin="@dimen/m5"
+            android:textSize="@dimen/f15"
+            android:background="@drawable/input_edittext_bg"
+            android:textColor="@color/grey" />
+
+        <Button
+            android:id="@+id/fileBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_file"
+            android:text="文件"
+            android:padding="@dimen/m10"
+            android:textSize="@dimen/f15"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/adrBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_adr"
+            android:text="位置"
+            android:padding="@dimen/m10"
+            android:layout_margin="@dimen/m5"
+            android:textSize="@dimen/f15"
+            android:background="@drawable/input_edittext_bg"
+            android:textColor="@color/grey" />
+    </LinearLayout>
+
+
+    <com.sylar.view.expression.ExpressionView
+        android:id="@+id/expView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+
+</LinearLayout>

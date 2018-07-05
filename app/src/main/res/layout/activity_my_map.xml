@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/bg_f2"
+    >
+
+    <include layout="@layout/auto_layout_head"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+      <FrameLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          >
+          <com.amap.api.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/m300"/>
+
+          <ImageView
+              android:id="@+id/iv_dingwei"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="bottom|left"
+              android:layout_marginLeft="@dimen/m20"
+              android:layout_marginBottom="@dimen/m20"
+              android:src="@mipmap/dingwei"
+              />
+
+          <ImageView
+              android:id="@+id/iv_center"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:src="@mipmap/dingwei_blue"
+              />
+
+
+      </FrameLayout>
+
+        <ListView
+            android:id="@+id/lv_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:scrollbars="none">
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>

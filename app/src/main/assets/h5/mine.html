@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>我的</title>
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <style>
+        .head-container{
+            display: flex;
+            box-sizing: border-box;
+            width: 100%;
+            background-color: #1d9bfa;
+            height: 100px;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .head-div{
+            width: 60px;
+            height: 60px;
+        }
+        .head{
+            width: 60px;
+        }
+        .name{
+            width: 80%;
+            color: white;
+            margin-left: 12px;
+            font-size: 25px;
+            margin-top: 8px;
+        }
+        .mui-table-view , .mui-content-padded{
+            margin-top: 24px;
+        }
+        .mui-icon-redo{
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<div class="mui-content">
+    <div class="head-container">
+        <!--<div class="head-div">-->
+            <img class="head" id="head" src="img/cat.jpg">
+        <!--</div>-->
+
+        <span class="name" id="name">name</span>
+        <a class="mui-pull-right mui-icon mui-icon-redo mui-icon-right-nav"
+           href="html/mine/changeInfo.html"></a>
+    </div>
+
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a>手机号<span class="mui-pull-right" id="phone"></span></a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a>邮箱地址<span class="mui-pull-right" id="email"></span></a>
+        </li>
+    </ul>
+
+    <div class="mui-content-padded">
+        <a class="mui-btn mui-btn-block mui-btn-primary" href="html/mine/changePwd.html" id="changePwd"> 修改密码</a>
+        <button id='exit' class="mui-btn mui-btn-block mui-btn-danger">退出登录</button>
+    </div>
+
+    <div class="load"></div>
+
+
+</div>
+
+
+<script src="js/mui.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/jqthumb.js"></script>
+<script src="js/spin.min.js"></script>
+<script src="js/jquery.spin.js"></script>
+<script src="js/common/app.js"></script>
+<script src="js/common/tool.js"></script>
+
+<script>
+    $(document).ready(function(){
+        if(getUservcard().headimg)
+            $("#head").attr('src','data:image/jpeg;base64,' + getUservcard().headimg);
+
+
+        var user = getUserInfo();
+        $('#name').text(user.username);
+        $('#phone').text(user.telephone);
+        $('#email').text(user.email);
+
+
+        document.getElementById("exit").addEventListener('tap', function() {
+            var btnArray = ['否', '是'];
+            mui.confirm('确认要退出吗', '圈子提示', btnArray, function(e) {
+                if (e.index == 1) {
+                    $('.load').show();
+                    $('body').spin(LOAD_OPTS);
+                    setTimeout(function () {
+                        $('body').spin(false);
+                        $('.load').hide();
+                        dsBridge.call(EXIT_FROM_JS, {}, function (responseData) {
+                            clearuserInfo();
+                            console.log("callback from native-->" + responseData);
+                        })
+                    }, 1000);
+                }
+            })
+        });
+    });
+</script>
+</body>
+</html>

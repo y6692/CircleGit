@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:id="@+id/recorder_surface_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.sylar.view.MovieRecorderView
+                android:id="@+id/movieRecorderView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/shoot_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/m50"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_movie_add_shoot"
+            android:text="按住拍"
+            android:textColor="#ECEBF1"/>
+
+        <Button
+            android:id="@+id/shoot_button2"
+            android:layout_width="@dimen/m50"
+            android:layout_height="@dimen/m50"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_movie_add_shoot"
+            android:text="播放"
+            android:textColor="#ECEBF1"/>
+
+        <Button
+            android:id="@+id/shoot_button3"
+            android:layout_width="@dimen/m50"
+            android:layout_height="@dimen/m50"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_movie_add_shoot"
+            android:text="反转"
+            android:textColor="#ECEBF1"/>
+
+    </RelativeLayout>
+
+
+    </LinearLayout>

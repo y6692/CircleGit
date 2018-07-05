@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_22" >
+
+    <RelativeLayout
+        android:id="@+id/recorder_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg_22"
+        android:paddingBottom="@dimen/m20"
+        android:paddingLeft="@dimen/m12"
+        android:paddingRight="@dimen/m12"
+        android:paddingTop="@dimen/m20" >
+
+        <Button
+            android:id="@+id/play_cancel"
+            android:layout_width="@dimen/m66"
+            android:layout_height="@dimen/m36"
+            android:background="@drawable/btn_recorder_cancel"
+            android:text="取消"
+            android:textColor="@color/font_black_bb"
+            android:textSize="@dimen/f14" />
+
+        <Button
+            android:id="@+id/play_next"
+            android:layout_width="@dimen/m66"
+            android:layout_height="@dimen/m36"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_recorder_next"
+            android:text="使用"
+            android:textColor="@color/font_black_44"
+            android:textSize="@dimen/f14" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/preview_video_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/m62" >
+
+        <TextureView
+            android:id="@+id/preview_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/previre_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="center"
+            android:src="@drawable/icn_play_big" />
+    </RelativeLayout>
+
+</RelativeLayout>

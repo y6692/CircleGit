@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <title>姓名</title>
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <link rel="stylesheet" href="../../css/app.css">
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/common/app.js"></script>
+    <script src="../../js/mui.min.js"></script>
+<style rel="stylesheet">
+    .subt{
+        padding-top: 15px;
+    }
+    body, .mui-content{
+        background-color: #f9f9f9;
+    }
+    #changName{
+        border-left: none;
+        border-right: none;
+        width: 100%;
+        border-radius: 0px;
+        font-size: 16px;
+        border-color:#cbcbcb ;
+    }
+    input::placeholder{
+        color: #cbcbcb;
+    }
+</style>
+
+
+
+</head>
+<body>
+<header class="circle-head">
+    <div class="circle-head-left">
+        <span class="circle-head-text" onclick="window.history.go(-1);">返回</span>
+    </div>
+    <div class="circle-head-center">
+        <span class="circle-title">姓名</span>
+    </div>
+    <div class="circle-head-right">
+        <span class="circle-head-text" id="sure">确定</span>
+    </div>
+</header>
+<div class="mui-content">
+<div class="subt">
+    <input type="text" placeholder="请输入姓名" id="changName">
+</div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#sure").click(function () {
+             var name = $("#changName").val().trim();
+          if (name.length <=0) {
+             mui.toast("请填写昵称");
+             return;
+          }
+          if (name.length>=7){
+              mui.toast("昵称只能输入6位字符");
+              return;
+          }
+            changeUserInfo(name);
+        });
+
+    });
+    function changeUserInfo(responseData) {
+        var userInfo = getUserInfo();
+        userInfo.name = responseData;
+        var dataInfo = {};
+        dataInfo.username = userInfo.username;
+        dataInfo.Name = responseData;
+        dataInfo.telephone = userInfo.telephone;
+        dataInfo.Email = userInfo.email || "";
+        dataInfo.varCard = userInfo.varCard;
+
+//        console.log(JSON.stringify(userInfo));
+        $.ajax({
+            url:BASE_URL + "user/updateuser",
+            type:"POST",
+            async:true,
+            data:userInfo,
+            timeout:5000,
+            dataType:"json",
+            beforeSend:function(xhr){
+                console.log(xhr)
+                console.log("发送前")
+                // 显示加载中
+            },
+            success:function (data,textStatus,jqXHR) {
+//                console.log(data);
+//                console.log("textStatus:  " +　textStatus);
+//                console.log(jqXHR);
+                if(data.status != 100){
+                    mui.toast(data.message);
+                }else {
+                    if(data.status == 100){
+                        mui.toast("修改成功");
+                        saveUserInfo(userInfo);
+                        dsBridge.call(CHANGE_UserInfo_FROM_JS, {'userInfo':userInfo}, function () {
+//                        alert("callback from native-->" + responseData);
+                        });
+                        setTimeout(function () {
+                            window.history.go(-1);
+                        },1000);
+                    }
+                }
+            },
+            error:function (xhr,textStatus) {
+                console.log("错误")
+                console.log(xhr)
+                console.log(textStatus)
+            },
+            complete:function () {
+                console.log("结束")
+            }
+        });
+    }
+</script>
+</body>
+</html>

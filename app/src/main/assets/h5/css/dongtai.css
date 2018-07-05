@@ -1,0 +1,203 @@
+
+.options{
+    z-index: 100;
+    position: fixed;
+    box-sizing: border-box;
+    left: 50%;
+    top: 40px;
+    margin-left: -50px;
+    width: 100px;
+    border-top: 1px solid #75c9ff;
+    border-left: 1px solid #75c9ff;
+    border-right: 1px solid #75c9ff;
+    display: none;
+}
+.option{
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    background-color: white;
+    border-bottom: 1px solid #75c9ff;
+    color: #75c9ff;
+    font-size: 15px;
+}
+.item-container{
+}
+.item-container .top{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 12px;
+    background-color: white;
+}
+.item-container .top .top-right{
+    margin-left: 12px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.img-container{
+    width: 80px;
+    height: 80px;
+    background-color: #6db1c8;
+    margin-right: 6px;
+}
+
+.head-container{
+    width: 44px;
+    height: 44px;
+}
+.head{
+    width: 44px;
+    height:44px;
+}
+.img-4{
+    width: 80px;
+    height:80px;
+}
+
+.action-3{
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    height: 35px;
+    align-items: center;
+    background-color: white;
+}
+.action-1{
+    box-sizing: border-box;
+    padding-left: 30px;
+    flex:1;
+    display: flex;
+    height:100%;
+    justify-content: center;
+    align-items: center;
+}
+.action-3 .action-1:nth-child(1){
+    background: url("../img/dongtai/xiaoxi.png") no-repeat 35px 8px;
+    background-size: 18px;
+}
+.action-3 .action-1:nth-child(3){
+    background: url("../img/dongtai/comment.png") no-repeat 35px 8px;
+    background-size: 18px;
+}
+.action-3 .action-1:nth-child(5){
+    background: url("../img/dongtai/unzan.png") no-repeat 35px 8px;
+    background-size: 18px;
+}
+.action-divider{
+    color: #999;
+}
+.options .mui-table-view-cell{
+    padding: 0;
+}
+.mui-table-view-cell:after {
+    height: 0px;
+}
+.zan{
+    color: #31b4ff;
+    background: url("../img/dongtai/zan.png") no-repeat 35px 8px;
+    background-size: 15px;
+}
+.dropload-up{
+    background-color: #f2f2f2;
+}
+.img-add{
+    width: 20px;
+    height: 20px;
+}
+
+.footer-container{
+    box-sizing: border-box;
+    padding: 6px 12px;
+    display: flex;
+    flex-direction: row;
+    height: 48px;
+    align-items: center;
+}
+.span-comment{
+    display: inline-block;
+    flex:1;
+    padding: 6px;
+    border: 1px solid gainsboro;
+    font-size: 15px;
+    height: 30px;
+    overflow: scroll;
+}
+.emoji{
+    margin-left: 15px;
+    width: 25px;
+    height: 25px;
+}
+.mui-bar-tab input[type=text]{
+    padding: 0 0 0 10px;
+    margin: 0;
+    height: 35px;
+    font-size: 15px;
+}
+.emoji-container{
+    padding: 5px 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.emoji-item{
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+}
+.comment-container{
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.dongtai-like-container{
+    display: inline-block;
+    margin: 3px 12px;
+    background-color: #f2f2f2;
+    border-radius: 6px;
+}
+.dongtai-like{
+    padding: 3px 5px 3px 25px;
+    background: url(../img/dongtai/zan.png) no-repeat 5px;
+    background-size: 15px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 320px) {
+    .action-3 .action-1:nth-child(1){
+        background: url("../img/dongtai/xiaoxi.png") no-repeat 25px 8px;
+        background-size: 16px;
+    }
+    .action-3 .action-1:nth-child(3){
+        background: url("../img/dongtai/comment.png") no-repeat 25px 8px;
+        background-size: 16px;
+    }
+    .action-3 .action-1:nth-child(5){
+        background: url("../img/dongtai/unzan.png") no-repeat 25px 8px;
+        background-size: 16px;
+    }
+    .zan{
+        color: #31b4ff;
+        background: url("../img/dongtai/zan.png") no-repeat 25px 8px;
+        background-size: 16px;
+    }
+    .img-container{
+        width: 65px;
+        height: 65px;
+        background-color: #6db1c8;
+        margin-right: 6px;
+    }
+    .img-4{
+        width: 65px;
+        height:65px;
+    }
+}

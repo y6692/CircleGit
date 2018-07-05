@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/m240"
+    android:layout_height="@dimen/m80"
+    android:background="@color/bg_22_trans55" >
+
+    <RelativeLayout
+        android:id="@+id/recorder_progress_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m54" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/m16"
+            android:text="处理中..."
+            android:textColor="@color/white"
+            android:textSize="@dimen/f14" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recorder_progress_text"
+        android:paddingLeft="@dimen/m14"
+        android:paddingRight="@dimen/m10" >
+
+        <ProgressBar
+            android:id="@+id/recorder_progress_progressbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="@dimen/m180"
+            android:layout_height="@dimen/m6"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/recorder_success_progress" />
+
+        <TextView
+            android:id="@+id/recorder_progress_progresstext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="0%"
+            android:textColor="@color/white"
+            android:textSize="@dimen/f12" />
+    </RelativeLayout>
+
+</RelativeLayout>

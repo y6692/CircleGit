@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="@dimen/m5"
+    android:padding="@dimen/m8"
+     >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/m235"
+        android:stretchColumns="1"
+        android:background="@drawable/xgk"
+        >
+
+        <TableRow>
+            <EditText
+                android:id="@+id/setting_et_server"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/m15"
+                android:layout_marginRight="@dimen/m15"
+                android:layout_marginTop="@dimen/m15"
+
+                android:layout_span="2"
+                android:hint="登录服务器"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:lines="1"
+                android:singleLine="true"
+                android:text=""
+                android:paddingLeft="@dimen/m15"
+                android:background="@drawable/srk"
+                />
+        </TableRow>
+
+
+        <TableRow>
+
+            <EditText
+                android:id="@+id/setting_et_username"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="@dimen/m15"
+                android:layout_marginRight="@dimen/m15"
+                android:layout_marginTop="@dimen/m15"
+
+                android:layout_span="2"
+                android:hint="用户名"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:lines="1"
+                android:singleLine="true"
+                android:text=""
+                android:paddingLeft="@dimen/m15"
+                android:background="@drawable/srk" />
+        </TableRow>
+
+
+        <TableRow>
+
+            <EditText
+                android:id="@+id/setting_et_passwd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="@dimen/m15"
+                android:layout_marginRight="@dimen/m15"
+                android:layout_marginTop="@dimen/m15"
+
+                android:layout_span="2"
+                android:hint="密码"
+                android:includeFontPadding="false"
+                android:inputType="textPassword"
+                android:text=""
+                android:paddingLeft="@dimen/m15"
+                android:background="@drawable/srk" />
+        </TableRow>
+
+
+
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/setting_btn_cancel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="@dimen/m15"
+                    android:layout_marginTop="@dimen/m15"
+
+                    android:layout_weight="1"
+                    android:padding="@dimen/m2"
+                    android:text="取消"
+                    android:textSize="@dimen/f20"
+                    android:textColor="@color/white"
+                    android:background="@drawable/qx" />
+
+                <Button
+                    android:id="@+id/setting_btn_ok"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="@dimen/m15"
+                    android:layout_marginRight="@dimen/m15"
+                    android:layout_marginTop="@dimen/m15"
+
+                    android:layout_weight="1"
+                    android:padding="@dimen/m2"
+                    android:text="确认"
+                    android:textSize="@dimen/f20"
+                    android:textColor="@color/white"
+                    android:background="@drawable/qr" />
+
+
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

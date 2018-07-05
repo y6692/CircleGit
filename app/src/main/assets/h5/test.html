@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <title>Title</title>
+    <script src="operdatabase.js"></script>
+    <link rel="stylesheet" href="css/mui.min.css">
+</head>
+<body  onload="init()">
+<div class="load"></div>
+<!-- 创建数据库对象、使用事务进行数据库操作 -->
+姓名：<input type="text" id="name"/>
+电话：<input type="text" id="tel" />
+<input type="button" value="保存" onclick="saveData()" /><hr/><hr/>
+<input type="button" value="查询" onclick="selectfrom()" />
+<hr/>
+<input type="button" onclick="showAllData()" value="显示全部">
+<input type="button" onclick="delAllData()" value="清空全部">
+<hr/>
+<table id="datatable" border="1">
+
+</table>
+
+</body>
+</html>

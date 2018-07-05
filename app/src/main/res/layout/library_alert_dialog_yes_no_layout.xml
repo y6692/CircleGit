@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/m36"
+    >
+
+    <com.flyco.roundview.RoundLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:rv_backgroundColor="@color/library_white"
+        app:rv_cornerRadius="@dimen/m16"
+        >
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_marginTop="@dimen/m16"
+            android:text="标题"
+            style="@style/library_text_17_black_1d"
+            />
+        <TextView
+            android:id="@+id/tv_msg"
+            android:padding="@dimen/m28"
+            android:text="恭喜您申请成功"
+            style="@style/library_text_16_black_1d"
+            />
+
+        <View style="@style/library_divider_1px"
+            android:background="@color/library_border"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/m50"
+            android:gravity="center_vertical"
+            >
+            <TextView
+                android:id="@+id/tv_no"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="取消"
+                android:width="0dp"
+                style="@style/library_text_14_black_1d_trans50"
+                />
+
+            <View
+                android:layout_width="@dimen/m1"
+                android:layout_height="match_parent"
+                android:background="@color/library_border"
+                />
+
+
+            <TextView
+                android:id="@+id/tv_yes"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="确定"
+                android:width="0dp"
+                style="@style/library_text_14_red"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+
+    </com.flyco.roundview.RoundLinearLayout>
+
+
+</LinearLayout>

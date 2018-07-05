@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_f5"
+    android:orientation="vertical" >
+
+
+    <include layout="@layout/layout_head"/>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/m79"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/m26"
+        android:layout_marginBottom="@dimen/m26">
+
+         <com.sylar.unit.CircularImage
+            android:id="@+id/headView"
+            android:layout_width="@dimen/m50"
+            android:layout_height="@dimen/m50"
+            android:scaleType="fitXY"
+
+          android:src="@drawable/memicon"
+
+            android:layout_margin="@dimen/m10" />
+
+         <LinearLayout 
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             >
+
+        <TextView
+            android:id="@+id/nameView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+
+            android:paddingBottom="@dimen/m8"
+            android:paddingLeft="@dimen/m15"
+            android:paddingRight="@dimen/m20"
+            android:paddingTop="@dimen/m8"
+            android:gravity="left"
+
+            android:text="name"
+            android:textSize="@dimen/f22"
+            android:textColor="@color/bg_01"/>
+             
+        
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/sexView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:textSize="@dimen/f8"
+                android:paddingBottom="@dimen/m8"
+                android:paddingLeft="@dimen/m15"
+                android:paddingRight="@dimen/m20"
+                android:paddingTop="@dimen/m8"
+                android:gravity="left"
+
+                android:text=""
+                android:layout_marginTop="@dimen/m5"
+                android:textColor="@color/grey"/>
+
+
+
+             <ImageView
+                 android:visibility="gone"
+                 android:id="@+id/chat"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+
+                 android:layout_marginTop="@dimen/m12"
+                 android:layout_marginRight="@dimen/m12"
+
+                 android:src="@drawable/noticemsg"
+                 android:gravity="right"/>
+             
+         </LinearLayout>
+         
+
+    </LinearLayout>
+
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/m10"
+            android:text="电话："
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/phoneView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/font_blue_31b4ff"/>
+
+    </LinearLayout>
+    <include layout="@layout/line" />
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/m10"
+            android:text="邮箱："
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/emailView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/font_blue_31b4ff"/>
+
+    </LinearLayout>
+    <include layout="@layout/line" />
+
+
+        <Button
+            android:id="@+id/addFriend"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/m30"
+            android:layout_marginLeft="@dimen/m50"
+            android:layout_marginRight="@dimen/m50"
+            android:background="@drawable/btn"
+            android:textColor="@color/bg_01"
+            android:text="加好友"/>
+
+        <Button
+            android:id="@+id/operBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/m30"
+            android:layout_marginLeft="@dimen/m50"
+            android:layout_marginRight="@dimen/m50"
+            android:background="@drawable/btndel"
+            android:textColor="@color/bg_01"
+            android:text="删除圈成员"/>
+
+
+
+</LinearLayout>

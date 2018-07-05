@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>新用户注册</title>
+    <link href="../../css/mui.min.css" rel="stylesheet" />
+    <link href="../../css/app.css" rel="stylesheet" />
+    <script src="../../js/md5.js"></script>
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/mui.min.js"></script>
+    <script src="../../js/spin.min.js"></script>
+    <script src="../../js/jquery.spin.js"></script>
+    <script src="../../js/common/app.js"></script>
+    <link rel="stylesheet" href="../../css/register.css">
+    <script src="../../js/base64.min.js"></script>
+    <script src="../../js/htmljs/Register.js"></script>
+
+</head>
+<body>
+<header class="circle-head">
+    <div class="circle-head-left">
+        <span class="circle-head-text" onclick="window.history.go(-1);">返回</span>
+    </div>
+    <div class="circle-head-center">
+        <span class="circle-title">新用户注册</span>
+    </div>
+    <div class="circle-head-right">
+        <span></span>
+    </div>
+</header>
+
+
+<div class="mui-content">
+    <div class="mui-content-padded">
+    <div class="input-row intput_1" id="div_phone">
+      <span id="span-row">
+          <span id="u_code">+86</span>
+          <span id="ver_span">|</span>
+      </span>
+        <input id='userPhone' class="mui-input-clear mui-input" type="tel"   placeholder="手机号">
+    </div>
+
+    <div class="input-row" >
+         <span>
+             <a class="get_code" id="get_code">获取验证码</a>
+             <a class="get_code" id="get_Recode" style="display: none">重新获取</a>
+             <span class="get_code" id="remainTime" style="display: none"></span>
+        </span>
+        <input id='code' class="mui-input-clear mui-input"  type="tel" placeholder="短信验证">
+    </div>
+    <div class="input-row">
+        <input id='pw1' name="password" class="mui-input-clear mui-input" type="password" placeholder="密码">
+     </div>
+    <div class="input-row">
+        <input id='pw2' name="password" class="mui-input-clear mui-input" type="password"  placeholder="确认密码">
+    </div >
+    <span class="errorHint" id="errorSpan"></span><br>
+    <button id='register' class="mui-btn mui-btn-block mui-btn-primary">下一步</button>
+    <div id="div_tips">
+         <span class="span_tips" >
+         点击“下一步”即同意
+         <a class="a_tips">《圈子服务及隐私条款》</a>
+          </span>
+    </div>
+
+    </div>
+</div>
+</body>
+</html>

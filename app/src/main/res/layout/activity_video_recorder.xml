@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black" >
+
+    <RelativeLayout
+        android:id="@+id/recorder_flashlight_parent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m56"
+        android:background="@color/bg_22" >
+
+        <TextView
+            android:id="@+id/txtTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/m30" />
+
+        <Button
+            android:id="@+id/recorder_flashlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/m112"
+            android:background="@drawable/btn_recorder_flashlight"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/recorder_frontcamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/m112"
+            android:layout_toLeftOf="@id/recorder_flashlight"
+            android:background="@drawable/btn_recorder_frontcamera"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <com.sylar.ucmlmobile.ProgressView
+        android:id="@+id/recorder_progress"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m6"
+        android:layout_below="@id/recorder_flashlight_parent" />
+
+    <RelativeLayout
+        android:id="@+id/recorder_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m110"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg_22"
+        android:gravity="center"
+        android:paddingBottom="@dimen/m20"
+        android:paddingLeft="@dimen/m12"
+        android:paddingRight="@dimen/m12"
+        android:paddingTop="@dimen/m20" >
+
+        <Button
+            android:id="@+id/recorder_cancel"
+            android:layout_width="@dimen/m66"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_recorder_cancel"
+            android:textColor="@color/font_black_bb"
+            android:textSize="@dimen/f14" />
+
+        <Button
+            android:id="@+id/recorder_comp"
+            android:layout_width="@dimen/m66"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/btn_recorder_start"
+            android:gravity="center"
+            android:textColor="@color/font_black_bb"
+            android:textSize="@dimen/f14" />
+
+        <Button
+            android:id="@+id/recorder_next"
+            android:layout_width="@dimen/m66"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_recorder_ok"
+            android:enabled="false"
+            android:textColor="@color/font_black_44"
+            android:textSize="@dimen/f14" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/recorder_surface_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/recorder_bottom"
+        android:layout_below="@id/recorder_progress" >
+
+        <SurfaceView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/recorder_surface_state"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m56"
+        android:layout_below="@id/recorder_progress"
+        android:background="@color/contents_text_trans7f"
+        android:clickable="false"
+        android:focusable="false"
+        android:scaleType="center" />
+
+    <Button
+        android:layout_width="@dimen/m50"
+        android:layout_height="@dimen/m50"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/m20"
+        android:layout_marginBottom="@dimen/m200"
+        android:text="发送"
+        />
+
+</RelativeLayout>

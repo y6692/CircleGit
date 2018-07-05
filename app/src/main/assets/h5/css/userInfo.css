@@ -1,0 +1,92 @@
+.right-skip{
+    float: right;
+    height: 44px;
+    line-height: 44px;
+    color: #31b4ff;
+}
+.div-touxiang{
+    margin: 0px auto;
+    text-align: center;
+}
+.div-touxiang img{
+    width: 80px;
+    height: 80px;
+    border: none 1px red;
+    border-radius: 40px;
+}
+.mui-input-row{
+    width: 100%;
+}
+.mui-input-row input{
+    padding-left: 30px;
+    border: none;
+    font-size: 18px;
+    border-bottom: 1px solid gainsboro;
+}
+.mui-input-row input::-webkit-input-placeholder {
+    color: gainsboro;
+    font-size:18px;
+}
+.mui-content-padded {
+    padding: 16px;
+}
+#xiala-a{
+    float: right;
+    position: absolute;
+    right: 0px;
+    color:#31b4ff;
+    /*background-color: #8a6de9;*/
+}
+#selectoption {
+    position: absolute;
+}
+#selectsex{
+    display: none;
+    height: 60px;
+    /*float: right;*/
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    background-color: white;
+}
+#selectsex div{
+    height: 40px;
+    line-height: 40px;
+
+}
+#username{
+    background:url("../img/register/nicheng.png") no-repeat 0px 7px;
+    background-size: 18px;
+}
+#usersex {
+    padding-right: 150px;
+    background: url("../img/register/xingbie.png") no-repeat 0px 7px;
+    background-size: 18px;
+}
+#useraddress {
+    background: url("../img/register/dizhi.png") no-repeat 0px 7px;
+    background-size: 18px;
+}
+#username:focus{
+    background:url("../img/register/nichengax.png") no-repeat 0px 7px;
+    background-size: 18px;
+    background-size: 18px;
+    border-bottom: 1px solid #31b4ff;
+
+}
+#usersex:focus {
+    background: url("../img/register/xingbieax.png") no-repeat 0px 7px;
+    background-size: 18px;
+    border-bottom: 1px solid #31b4ff;
+
+}
+#useraddress:focus {
+    background: url("../img/register/dizhiax.png") no-repeat 0px 7px;
+    background-size: 18px;
+    border-bottom: 1px solid #31b4ff;
+
+}
+
+/*.mui-content .mui-input-row  #usersex{*/
+    /*margin-bottom: 0px;*/
+/*}*/

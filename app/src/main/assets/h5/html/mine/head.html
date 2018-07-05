@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>我的</title>
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="../../css/app.css"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .mui-content{
+            width: 100%;
+            height: 100%;
+        }
+        #head{
+            display: block;
+            margin: 10px auto;
+            /*width: 180px;*/
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+<header class="circle-head">
+    <div class="circle-head-left">
+        <span class="circle-head-text" onclick="window.history.go(-1);">返回</span>
+    </div>
+    <div class="circle-head-center">
+        <span class="circle-title">设置头像</span>
+    </div>
+    <div class="circle-head-right"></div>
+</header>
+
+<div class="mui-content">
+    <!--<button id="chooseHead" class="choose-head">选择头像</button>-->
+    <div class="mui-content-padded">
+        <a href="#picture" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined" style="
+        padding: 5px 20px;margin-top: 20px">
+            设置头像</a>
+    </div>
+    <img id="head" src="../../img/cat.jpg">
+
+    <p id="info"></p>
+
+    <div id="picture" class="mui-popover mui-popover-action mui-popover-bottom">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a href="#">拍照</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a href="#">相册</a>
+            </li>
+        </ul>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a href="#picture"><b>取消</b></a>
+            </li>
+        </ul>
+    </div>
+    <div class="load"></div>
+</div>
+<script src="../../js/mui.min.js"></script>
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<script src="../../js/common/app.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#head").attr('src','data:image/jpeg;base64,' + getUservcard().headimg);
+        mui('body').on('tap', '.mui-popover-action li>a', function() {
+            var a = this,
+                parent;
+            //根据点击按钮，反推当前是哪个actionsheet
+            for (parent = a.parentNode; parent != document.body; parent = parent.parentNode) {
+                if (parent.classList.contains('mui-popover-action')) {
+                    break;
+                }
+            }
+            //关闭actionsheet
+            mui('#' + parent.id).popover('toggle');
+            console.log("你刚点击了\"" + a.innerHTML + "\"按钮");
+
+            if(a.innerHTML == '拍照'){
+                dsBridge.call(HEAD_TAKE_PIC_FROM_JS, {}, function (responseData) {
+//                    $('#info').text(responseData);
+                    changeUserInfo(responseData);
+                    $("#head").attr('src','data:image/jpeg;base64,' + responseData);
+                })
+            }else if(a.innerHTML == '相册'){
+//                changeUserInfo("nihaopfdafdasf");
+                dsBridge.call(HEAD_CHOOSE_PIC_FROM_JS, {}, function (responseData) {
+//                    $('#info').text(responseData);
+                    changeUserInfo(responseData);
+                    $("#head").attr('src','data:image/jpeg;base64,' + responseData);
+                })
+            }
+        });
+    });
+    function changeUserInfo(responseData) {
+        var userInfo = getUserInfo();
+        var dataInfo = {};
+        var varCard = {};
+        var vCard =  getUservcard();
+        dataInfo.username = userInfo.username;
+        dataInfo.Name = userInfo.name;
+        dataInfo.telephone = userInfo.telephone;
+        dataInfo.Email = userInfo.email || "";
+        vCard.headimg = responseData;
+//        vCard.Name = vCard.Name;
+//        vCard.sex = vCard.sex;
+//        vCard.telephone = vCard.telephone;
+//        vCard.Email = vCard.Email;
+//        vCard.address = vCard.address;
+//        vCard.username = vCard.username;
+        varCard.vCard = vCard;
+        dataInfo.varCard = JSON.stringify(varCard);
+        console.log(JSON.stringify(dataInfo));
+        $.ajax({
+            url:BASE_URL + "user/updateuser",
+            type:"POST",
+            async:true,
+            data:dataInfo,
+            timeout:5000,
+            dataType:"json",
+            beforeSend:function(xhr){
+                console.log(xhr)
+                console.log("发送前")
+                // 显示加载中
+//                $('.load').show();
+//                $('body').spin(LOAD_OPTS);
+            },
+            success:function (data,textStatus,jqXHR) {
+                console.log(data);
+                console.log("textStatus:  " +　textStatus);
+                console.log(jqXHR);
+                if(data.status != 100){
+                    mui.toast(data.message);
+                }else {
+                    if(data.status == 100){
+                        mui.toast("修改成功");
+                        var user = getUserInfo();
+                        user.varCard = JSON.stringify(varCard);
+                        saveUserInfo(user);
+                        console.log(JSON.stringify(user));
+                        setTimeout(function () {
+                            window.history.go(-1);
+                        },1000);
+                    }
+                }
+            },
+            error:function (xhr,textStatus) {
+                console.log("错误")
+                console.log(xhr)
+                console.log(textStatus)
+
+
+            },
+            complete:function () {
+                console.log("结束")
+//                $('.load').hide();
+//                $('body').spin(false);
+            }
+        });
+    }
+</script>
+</body>
+</html>

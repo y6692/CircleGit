@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta charset="UTF-8">
+    <title>二维码名片</title>
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <link rel="stylesheet" href="../../css/app.css">
+    <link rel="stylesheet" href="../../css/userQR.css">
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/common/app.js"></script>
+    <script type="text/javascript" src="../../js/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="../../js/qrcode.js"></script>
+
+</head>
+<body>
+<header class="circle-head">
+    <div class="circle-head-left">
+        <span class="circle-head-text" onclick="window.history.go(-1);">返回</span>
+    </div>
+    <div class="circle-head-center">
+        <span class="circle-title">二维码名片</span>
+    </div>
+    <div class="circle-head-right"></div>
+</header>
+<div class="mui-content">
+    <div class="mui-content-padded content-shadow">
+        <div class="user-head"><img id="head" src="../../img/mine/userPlace.png"></div>
+        <div class="user-head" id="name">昵称</div>
+        <div class="user-head">
+            <div id="qrimage"></div>
+        </div>
+        <div class="user-head user-tips">扫一扫，加我的圈子</div>
+    </div>
+</div>
+<script>
+    jQuery('#qrimage').qrcode({
+        width: 200,
+        height: 200,
+        text: getUserInfo().username || ""
+    });
+    $(document).ready(function () {
+
+
+        if (getUservcard().headimg)
+            $("#head").attr('src', 'data:image/jpeg;base64,' + getUservcard().headimg);
+        $("#address").text(getUservcard().address||"");
+        var user = getUserInfo();
+        $('#name').text(user.name||"");
+    });
+</script>
+</body>
+</html>

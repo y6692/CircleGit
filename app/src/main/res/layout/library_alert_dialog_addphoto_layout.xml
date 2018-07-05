@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/popup_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/m12"
+        android:paddingTop="@dimen/m30">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/library_cancel"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/m12"
+            android:layout_marginRight="@dimen/m12"
+            >
+          <TextView
+              android:id="@+id/tv_take_photo"
+              android:layout_width="fill_parent"
+              android:layout_height="@dimen/m45"
+              android:gravity="center"
+              android:text="拍照"
+              android:textColor="@color/font_black_46"
+              android:textSize="@dimen/f16" />
+
+       <View style="@style/library_divider_1px"/>
+          <TextView
+              android:id="@+id/tv_get_photo"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/m45"
+              android:gravity="center"
+              android:textColor="@color/font_black_46"
+              android:text="从相册获取"
+              android:padding="@dimen/m5"
+              android:textSize="@dimen/f16" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_cancle"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/m45"
+            android:layout_marginLeft="@dimen/m12"
+            android:layout_marginRight="@dimen/m12"
+            android:layout_marginTop="@dimen/m12"
+            android:background="@drawable/library_cancel"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/font_orange_ff9000"
+            android:textSize="@dimen/f16"/>
+    </LinearLayout>
+
+</LinearLayout>

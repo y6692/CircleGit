@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+
+
+	</head>
+
+	<body ng-app="">
+	    <!--所谓的固定栏，也就是带有.mui-bar属性的节点，都是基于fixed定位的元素；-->
+		<!--常见组件包括：顶部导航栏（.mui-bar-nav）、底部工具条(.mui-bar-footer)、底部选项卡（.mui-bar-tab）-->
+		<!--这些元素使用时需遵循一个规则：放在.mui-content元素之前，-->
+		<!--即使是底部工具条和底部选项卡，也要放在.mui-content之前，否则固定栏会遮住部分主内容；-->
+		<header class="
+		 mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">消息</h1>
+		</header>
+
+		<nav class="mui-bar mui-bar-tab">
+			<!--<a class="mui-tab-item mui-active" href="#tabbar-msg" data-index="0">-->
+			<a class="mui-tab-item mui-active" href="message.html" data-index="0">
+				<span class="mui-icon mui-icon-email"><span class="mui-badge">9</span></span>
+				<span class="mui-tab-label">消息</span>
+			</a>
+			<!--<a class="mui-tab-item" href="#tabbar-dongtai"  data-index="1">-->
+			<a class="mui-tab-item" href="dongtai.html"  data-index="1">
+			<!--<a class="mui-tab-item" href="dongtai.html">-->
+				<span class="mui-icon mui-icon-pengyouquan"></span>
+				<span class="mui-tab-label">动态</span>
+			</a>
+			<!--<a class="mui-tab-item" href="#tabbar-circle" data-index="2">-->
+			<a class="mui-tab-item" href="circle.html" data-index="2">
+				<span class="mui-icon mui-icon-spinner mui-spin"></span>
+				<span class="mui-tab-label">圈子</span>
+			</a>
+			<!--<a class="mui-tab-item" href="#tabbar-friends" data-index="3">-->
+			<a class="mui-tab-item" href="friends.html" data-index="3">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">好友</span>
+			</a>
+			<!--<a class="mui-tab-item" href="#tabbar-mine" data-index="4">-->
+			<a class="mui-tab-item" href="mine.html" data-index="4">
+				<span class="mui-icon mui-icon-person"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<div id="tabbar-msg" class="mui-control-content mui-active">
+				<div class="title">这是div模式选项卡中的第1个子页面.</div>
+				<div class="title">何谓div模式的选项卡？
+					其实就是通过DIV模拟一个独立页面，通过DIV的显示、隐藏模拟不同页面的切换，典型的SPA模式；</div>
+				<div class="title">
+					这种模式适合简单业务系统，因为每个选项卡内容要写在一个DIV中，
+					若逻辑复杂，会导致当前页面DOM结构繁杂，造成webview响应缓慢，甚至崩溃；
+					因此若系统较复杂，需要下拉刷新等操作，推荐使用webview模式的选项卡；</div>
+				<div ng-include="'message.html'"></div>
+			</div>
+			<div id="tabbar-dongtai" class="mui-control-content">
+				<div ng-include="'dongtai.html'"></div>
+			</div>
+			<div id="tabbar-circle" class="mui-control-content">
+				<div ng-include="'circle.html'"></div>
+			</div>
+			<div id="tabbar-friends" class="mui-control-content">
+				<div ng-include="'friends.html'"></div>
+			</div>
+			<div id="tabbar-mine" class="mui-control-content">
+				<div ng-include="'mine.html'"></div>
+			</div>
+		</div>
+	</body>
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script>
+
+		// 解决导航a标签不能跳转页面
+        mui('body').on('tap','a',function(){document.location.href=this.href;});
+
+
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+        //设置默认打开首页显示的子页序号；
+        var Index=0;
+        //把子页的路径写在数组里面
+        var subpages = ['message.html','dongtai.html','circle.html','friends.html','me.html'];
+
+        //所有的plus-*方法写在mui.plusReady中或者后面。
+//        mui.plusReady(function() {
+//            //获取当前页面所属的Webview窗口对象
+//            var self = plus.webview.currentWebview();
+//            alert(subpages.length);
+//            for (var i = 0; i < subpages.length; i++) {
+//                //创建webview子页
+//                var sub = plus.webview.create(
+//                    subpages[i], //子页url
+//                    subpages[i], //子页id
+//                    {
+//                        top: '45px',//设置距离顶部的距离
+//                        bottom: '50px'//设置距离底部的距离
+//                    }
+//                );
+//                //如不是我们设置的默认的子页则隐藏，否则添加到窗口中
+//                if (i != Index) {
+//                    sub.hide();
+//                }
+//                //将webview对象填充到窗口
+//                self.append(sub);
+//            }
+//
+//
+//            //当前激活选项
+//            var activeTab = subpages[Index];
+			var title=document.querySelector(".mui-title");
+            //选项卡点击事件
+            mui('.mui-bar-tab').on('tap', 'a', function(event) {
+                console.log('djy', this.getAttribute('data-index'));
+
+                //获取目标子页的id
+//                var targetTab = this.getAttribute('href');
+//                if (targetTab == activeTab) {
+//                    return;
+//                }
+                //更换标题
+                title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
+//                //显示目标选项卡
+//                plus.webview.show(targetTab);
+//                //隐藏当前选项卡
+//                plus.webview.hide(activeTab);
+//                //更改当前活跃的选项卡
+//                activeTab = targetTab;
+            });
+//        });
+
+        function change() {
+            document.getElementById('btn').innerHTML = 'heheh';
+        }
+	</script>
+</html>

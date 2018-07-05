@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <com.sylar.view.swipelistview.SwipeListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@color/contents_text_trans00"
+        android:descendantFocusability="afterDescendants"
+        android:divider="@null"
+        android:fastScrollEnabled="false" />
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/m55"
+        android:layout_alignParentRight="true"
+        android:layout_width="@dimen/m25"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/search"/>
+    </LinearLayout>
+
+
+    <com.sylar.view.Sidebar
+        android:layout_marginTop="@dimen/m70"
+        android:layout_alignParentRight="true"
+        android:layout_width="@dimen/m25"
+        android:id="@+id/sidebar"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:clickable="true" />
+
+    <com.flyco.roundview.RoundTextView
+        android:id="@+id/floating_header"
+        android:gravity="center"
+        android:layout_width="@dimen/m50"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/m20"
+        android:paddingTop="@dimen/m20"
+        android:text="R"
+        android:layout_centerInParent="true"
+        app:rv_backgroundColor="@color/half_transparent"
+        app:rv_cornerRadius="@dimen/m6"
+        android:textColor="@color/font_orange_e6bb7c"
+        android:textSize="@dimen/f40"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        />
+
+</RelativeLayout>

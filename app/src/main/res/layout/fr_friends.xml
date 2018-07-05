@@ -1,0 +1,155 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_head"/>
+
+        <com.sylar.view.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></com.sylar.view.SearchView>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/m40"
+            app:tabSelectedTextColor="@color/theme_color"
+            app:tabIndicatorColor="@color/theme_color"
+            app:tabTextColor="@color/font_black_333">
+        </android.support.design.widget.TabLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v4.view.ViewPager>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/ll_bj"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_00_trans1e"
+        android:layout_marginTop="@dimen/m48">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/ll_add"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="@dimen/m200"
+            android:layout_height="@dimen/m150"
+
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/mf10"
+            android:layout_marginTop="@dimen/m48"
+
+            android:src="@mipmap/dk"/>
+
+        <LinearLayout
+            android:id="@+id/ll_jhy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/m200"
+            android:layout_marginTop="@dimen/m70"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/chaticon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/m10"
+                android:layout_marginTop="@dimen/m10"
+                android:text="加好友/群" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/headline"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/m1"
+            android:layout_marginLeft="@dimen/m183"
+            android:layout_marginRight="@dimen/m4"
+            android:layout_marginTop="@dimen/m110"
+            android:background="@color/bg_e5"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_cjqz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/m200"
+            android:layout_marginTop="@dimen/m110"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/gchaticon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/m10"
+                android:layout_marginTop="@dimen/m10"
+                android:text="创建群组" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/headline2"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/m1"
+            android:layout_marginLeft="@dimen/m183"
+            android:layout_marginRight="@dimen/m4"
+            android:layout_marginTop="@dimen/m150"
+            android:background="@color/bg_e5"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_fdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/m200"
+            android:layout_marginTop="@dimen/m150"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/fdt"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/m10"
+                android:layout_marginTop="@dimen/m10"
+                android:text="发动态" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

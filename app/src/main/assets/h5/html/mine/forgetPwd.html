@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>修改密码</title>
+    <link href="../../css/mui.min.css" rel="stylesheet" />
+    <link href="../../css/app.css" rel="stylesheet" />
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,.mui-content{
+            background-color: #f9f9f9;
+        }
+        .mui-input-row{
+            width: 100%;
+        }
+        .mui-input-row input{
+            /*padding-left: 30px;*/
+            border: none;
+            font-size: 18px;
+            border-bottom: 1px solid gainsboro;
+        }
+        .mui-input-row input::-webkit-input-placeholder {
+            color: gainsboro;
+            font-size:18px;
+        }
+        .mui-padd {
+            padding: 0px;
+            padding-top: 20px;
+            margin-top: 20px;
+            background-color: white;
+        }
+        #pwd, #pwd2{
+            /*background:url("../../img/pwd_grey.png") no-repeat 0px 7px;*/
+            /*background-size: 18px;*/
+        }
+        #pwd:focus, #pwd2:focus,#oldpwd:focus{
+            /*background:url("../../img/pwd_blue.png") no-repeat 0px 7px;*/
+            /*background-size: 18px;*/
+            border-bottom: 1px solid #31b4ff;
+        }
+        #pwd2{
+            margin-bottom: 0px;
+        }
+        .div-submit{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+        #submit{
+            width: 80%;
+        }
+         span .get_code{
+            position: absolute;
+            float: right;
+            line-height: 40px;
+            height: 40px;
+            margin-top: 12px;
+            margin-right: 10px;
+            right: 16px;
+            position: absolute;
+            color:#31b4ff;
+            box-shadow: none;
+            border: none;
+             bottom: 15px;
+        }
+        #code{
+            padding-right: 150px;
+              }
+    </style>
+
+</head>
+
+<body>
+<header class="circle-head">
+    <div class="circle-head-left">
+        <span class="circle-head-text" onclick="window.history.go(-1);">返回</span>
+    </div>
+    <div class="circle-head-center">
+        <span class="circle-title">修改密码</span>
+    </div>
+    <div class="circle-head-right">
+    </div>
+</header>
+
+<div class="mui-content">
+
+    <div class="mui-padd">
+        <div class="mui-input-row ">
+            <input id='phone' type="tel" class="mui-input-clear mui-input"  placeholder="手机号">
+        </div>
+        <div class="mui-input-row ">
+            <span>
+             <a class="get_code" id="get_code">获取验证码</a>
+             <a class="get_code" id="get_Recode" style="display: none">重新获取</a>
+             <span class="get_code" id="remainTime" style="display: none"></span>
+            </span>
+
+            <input id='code' type="tel" class="mui-input"  placeholder="验证码">
+        </div>
+
+        <div class="mui-input-row ">
+            <input id='pwd' type="password" class="mui-input-clear mui-input"  placeholder="新密码">
+        </div>
+        <div class="mui-input-row">
+            <input id='pwd2' type="password" class="mui-input-clear mui-input" placeholder="确认密码">
+        </div>
+    </div>
+    <div class="div-submit">
+        <button id='submit' class="mui-btn mui-btn-block mui-btn-primary">
+            确认修改
+        </button>
+    </div>
+
+    <div class="load"></div>
+</div>
+
+<script src="../../js/mui.min.js"></script>
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<script src="../../js/spin.min.js"></script>
+<script src="../../js/jquery.spin.js"></script>
+<script src="../../js/common/app.js"></script>
+<script src="../../js/md5.js"></script>
+
+<script>
+    var InterValObj;
+    var curCount;
+    var msgidStr = "";
+    $(document).ready(function(){
+        $("#phone").focus().select();
+        $("#submit").click(function(){
+            var code = $("#code").val().trim() || "";
+            var phone = $("#phone").val().trim() || "";
+            var pwd = $("#pwd").val().trim() || '';
+            var pwd2 =$("#pwd2").val().trim() || '';
+            if (phone.length <=0){
+                mui.toast("请填写手机号");
+                return;
+            }
+            if (pwd.length < 6 || pwd2.length < 6) {
+                mui.toast('密码最短为 6 个字符');
+                return;
+            }
+            if (pwd != pwd2) {
+                mui.toast('密码不一致');
+                return;
+            }
+            if (code.length <= 0){
+                mui.toast("请填写验证码");
+                return;
+            }
+            checkcodeRequest(code);
+//            var param = {};
+//            param.username = phone;
+//            param.plainPassword = hex_md5(pwd);
+//            changePwd(param);
+        });
+        //获取短信验证码
+        $("#get_code").click(function () {
+            checkPhoneNum();
+        });
+
+        $("#get_Recode").click(function () {
+            checkPhoneNum();
+        });
+    });
+    function checkPhoneNum() {
+        var phone = $("#phone").val().trim();
+        if (phone.length<=0){
+            mui.toast("请输入电话号码");
+            return;
+        }else {
+            if (!/(^1[3|5|8][0-9]{9}$)/.test(phone)) {//值工符合手机的格式
+                checkSpan("请输入正确的手机号",false);
+                return;
+            }
+            getcodeRequest(phone);
+        }
+    }
+    /*
+     * 计时器
+     */
+    function getCode() {
+        if (InterValObj)
+            window.clearInterval(InterValObj);//停止计时器
+        curCount = 60;
+        InterValObj = window.setInterval(setRemainTime, 1000); //启动计时器，1秒执行一次
+    }
+    /*
+     * 更新剩余时间
+     */
+    function setRemainTime() {
+        if (curCount == 1) {
+            window.clearInterval(InterValObj);//停止计时器
+            // alert("验证码过期,请重新获取");
+            $('#remainTime').hide();
+            $('#get_Recode').show();
+        } else {
+            $('#remainTime').show();
+            $('#get_Recode').hide();
+            $('#get_code').hide();
+            curCount--;
+            $("#remainTime").html(curCount + "s"+"重新获取");
+        }
+    }
+    //获取验证码
+    function getcodeRequest(phone) {
+        $.ajax({
+            url:BASE_URL+"message/getSMS",
+            type:"GET",
+            async:true,
+            timeout:5000,
+            dataType:"json",
+            data:{
+                Phone:phone,
+            },
+            beforeSend:function(xhr){
+                console.log(xhr)
+                console.log("发送前")
+            },
+            success:function (data,textStatus,jqXHR) {
+                console.log(data);
+                console.log("textStatus:  " +　textStatus);
+                console.log(jqXHR);
+                if (data.status == 100) {
+                    var obj = eval('(' + data.message + ')')
+                    if (obj.msg_id) {
+                        mui.toast("发送成功！");
+                        msgidStr = obj.msg_id;
+                        getCode();
+                    } else {
+                        mui.toast("发送失败！");
+                    }
+                }else {
+                    mui.toast("发送失败!");
+                }
+            },
+            error:function (xhr,textStatus) {
+                console.log("错误")
+                console.log(xhr)
+                console.log(textStatus)
+            },
+            complete:function () {
+                console.log("结束")
+            }
+        });
+
+    }
+//验证验证码
+    function checkcodeRequest(code) {
+        $.ajax({
+            url:BASE_URL+"message/checkSMS",
+            type:"GET",
+            async:true,
+            timeout:5000,
+            dataType:"json",
+            data:{
+                checknum :code,
+                msg_id:msgidStr,
+            },
+            beforeSend:function(xhr){
+                console.log(xhr)
+                console.log("发送前")
+            },
+            success:function (data,textStatus,jqXHR) {
+                console.log(data);
+                console.log("textStatus:  " +　textStatus);
+                console.log(jqXHR);
+                if(data.status = 100){
+                    var obj = eval('('+ data.message +')');
+                    if (obj.is_valid == true){
+                        var param = {};
+                        param.username = phone;
+                        param.plainPassword = hex_md5(pwd);
+                        changePwd(param);
+                    }else {
+                        mui.toast("验证码失败");
+                    }
+                }else {
+                    mui.toast("验证码失败");
+                }
+            },
+            error:function (xhr,textStatus) {
+                console.log("错误")
+                console.log(xhr)
+                console.log(textStatus)
+            },
+            complete:function () {
+                console.log("结束")
+            }
+        });
+
+    }
+
+    function changePwd(data) {
+        console.log(JSON.stringify(data));
+        $.ajax({
+            url: BASE_URL + 'user/updatepassword',
+            type:'POST', //GET
+            async:true,    //或false,是否异步
+            data:data,
+            timeout:5000,    //超时时间
+            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+            beforeSend:function(xhr){
+                console.log(xhr);
+                console.log('发送前');
+            },
+            success:function(data,textStatus,jqXHR){
+                console.log(data.results);
+//                console.log("textStatus:  " +　textStatus);
+//                console.log(jqXHR);
+                if(data.status == 100){
+                    dsBridge.call(EXIT_FROM_JS, {}, function () {
+                        clearuserInfo()
+//                        alert("callback from native-->" + responseData);
+                    });
+
+                }
+                else {
+                    mui.toast(data.message);
+//                    console.log("不会出来了");
+                }
+            },
+            error:function(xhr,textStatus){
+                console.log('错误');
+                console.log(xhr);
+                console.log(textStatus);
+            },
+            complete:function(){
+                console.log('结束');
+            }
+        });
+    }
+</script>
+</body>
+
+</html>

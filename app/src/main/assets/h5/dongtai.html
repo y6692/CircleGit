@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>动态</title>
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/dropload.css">
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="css/dongtai.css"/>
+
+</head>
+<body>
+<div class="load"></div>
+<div id="dongtai">
+    <header class="circle-head">
+        <div class="circle-head-left"></div>
+        <div class="circle-head-center">
+            <span class="circle-title">{{title}}</span>
+            <!--<span class="circle-title" @click="toggleType">{{title}}</span>-->
+        </div>
+        <div class="circle-head-right">
+            <img class="img-add" src="img/dongtai/add.png" @click="addDongtai">
+        </div>
+    </header>
+
+    <div class="options" v-show="seenType">
+        <span @click="changeType('全部动态', 0)" class="mui-table-view-cell option">全部动态</span>
+        <span @click="changeType('好友动态', 1)" class="mui-table-view-cell option">好友动态</span>
+        <span @click="changeType('圈动态', 2)" class="mui-table-view-cell option">圈动态</span>
+    </div>
+
+    <div class="mui-content">
+        <div>
+            <template v-for="item in rows">
+                <div class="item-container">
+                    <space></space>
+
+                    <header class="top">
+                        <div class="head-container">
+                            <dongtai-head v-bind:vcard="item.vcard"></dongtai-head>
+                        </div>
+                        <div class="top-right">
+                            <div style="display: flex">
+                                <font-36-000 v-bind:text="item.name"></font-36-000>
+                                <span style="flex:1"></span>
+                                <!--<font-26-333 v-bind:text="item.seenCount"></font-26-333>-->
+                            </div>
+                            <div style="display: flex">
+                                <div v-if="item.posttime">
+                                    <local-time v-bind:timestr="item.posttime" style="margin-right: 6px"></local-time>
+                                </div>
+
+                                <font-26-aaa v-bind:text="item.type==0? '来自好友动态':'来自圈动态'" ></font-26-aaa>
+                            </div>
+
+                        </div>
+                    </header>
+
+                    <main>
+                        <!--动态内容-->
+                        <div style="display: flex; flex-direction: column;padding:0 12px">
+                            <!--<font-36-000  v-bind:text="item.title" style="padding-bottom:6px"></font-36-000>-->
+                            <font-26-333  v-bind:text="item.content"></font-26-333>
+                        </div>
+                        <!--动态图片-->
+                        <div style="display: flex; flex-direction:row;width:100%;padding: 5px 12px;" v-show="item.imgs">
+                            <div class="img-container" v-for="img in item.imgs">
+                                <img class="img-4" v-bind:src=" 'data:image/jpeg;base64,' + img">
+                            </div>
+                        </div>
+
+                        <!--动态赞-->
+                        <div v-if="item.thumbsups && item.thumbsups.length>0">
+                            <divider style="margin: 6px 12px"></divider>
+                            <div class="dongtai-like-container">
+                                <dongtai-like v-bind:thumbsups="item.thumbsups"></dongtai-like>
+                            </div>
+
+                        </div>
+
+                        <!--动态评论-->
+                        <div v-if="item.comment && item.comment.length>0" class="comment-container" >
+                            <template v-for="comment in item.comment" >
+                                <comment v-bind:comment="comment"></comment>
+                            </template>
+                        </div>
+
+                    </main>
+
+
+
+                    <footer>
+                        <divider  style="margin-top: 6px"></divider>
+                        <div class="action-3">
+                            <span class="mui-table-view-cell font-26-333 action-1" @click="chat(item.trendsid)">聊天</span>
+                            <span class="action-divider">|</span>
+                            <span class="mui-table-view-cell font-26-333 action-1" @click="toggleComment(item)">评论</span>
+                            <span class="action-divider">|</span>
+                            <span class="mui-table-view-cell font-26-333 action-1" v-bind:class= "{'zan':item.zan}"
+                                  @click="zan(item)">赞</span>
+                        </div>
+                        <divider></divider>
+                    </footer>
+
+                </div>
+            </template>
+        </div>
+
+
+    </div>
+
+    <footer  class="mui-bar mui-bar-tab" v-show="seenComment">
+        <div class="footer-container">
+            <input type="text" v-model="commentStr" @keyup.enter="sendComment" placeholder="请输入评论...">
+            <!--<span contenteditable="true" id="spanComment" class="span-comment" @keyup.enter="sendComment"-->
+                  v-text="commentStr" @input="commentStr = $event.target.innerText"></span>
+            <img class="emoji" src="img/dongtai/emoji.png" @click="toggleEmoji">
+        </div>
+        <div class="emoji-container" v-show="seenEmoji">
+            <template v-for="emoji in emojis">
+                <img class="emoji-item" v-bind:src="emoji.path" @click="chooseEmoji(emoji.value)">
+            </template>
+
+        </div>
+    </footer>
+
+</div>
+
+
+<script src="js/mui.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/spin.min.js"></script>
+<script src="js/jquery.spin.js"></script>
+<script src="js/jqthumb.js"></script> <!-- 依赖jQuery -->
+<script src="js/vue.js"></script>
+<script src="js/dropload.js"></script>  <!-- jQuery1.7以上 或者 Zepto 二选一，不要同时都引用 -->
+
+<script src="js/common/component.js"></script>
+<script src="js/common/app.js"></script>
+<!--<script src="js/common/tool.js"></script>-->
+<script src="js/htmljs/dongtai.js"></script>
+
+
+</body>
+</html>

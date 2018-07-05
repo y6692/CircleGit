@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>修改信息</title>
+    <link href="../../css/mui.min.css" rel="stylesheet" />
+    <link href="../../css/app.css" rel="stylesheet" />
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: white;
+        }
+        .mui-content{
+            background-color: white;
+        }
+        .mui-input-row{
+            width: 100%;
+        }
+        .mui-input-row input{
+            padding-left: 30px;
+            border: none;
+            font-size: 18px;
+            border-bottom: 1px solid gainsboro;
+        }
+        .mui-input-row input::-webkit-input-placeholder {
+            color: gainsboro;
+            font-size:18px;
+        }
+        .mui-content-padded {
+            padding: 16px;
+        }
+        #pwd, #pwd2{
+            background:url("../../img/pwd_grey.png") no-repeat 0px 7px;
+            background-size: 18px;
+        }
+        #pwd:focus, #pwd2:focus{
+            background:url("../../img/pwd_blue.png") no-repeat 0px 7px;
+            background-size: 18px;
+
+        }
+        input:focus{
+            border-bottom: 1px solid #31b4ff;
+        }
+        .errorHint{
+            color:red;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header class="circle-head">
+    <div class="circle-head-left">
+        <span class="circle-head-text" onclick="window.history.go(-1);">返回</span>
+    </div>
+    <div class="circle-head-center">
+        <span class="circle-title">修改信息</span>
+    </div>
+    <div class="circle-head-right"></div>
+</header>
+
+<div class="mui-content">
+
+    <div class="mui-content-padded">
+
+        <div class="mui-input-row">
+            <input id='phone' type="tel" class="mui-input-clear mui-input" placeholder="请输入电话">
+        </div>
+        <div class="mui-input-row">
+            <input id='email' type="email" class="mui-input-clear mui-input" placeholder="请输入邮箱">
+        </div>
+        <span class="errorHint" id="errorSpan"></span>
+        <br/>
+        <br/>
+
+        <button id='submit' class="mui-btn mui-btn-block mui-btn-primary">确认修改</button>
+    </div>
+    <div class="load"></div>
+</div>
+
+<script src="../../js/mui.min.js"></script>
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<script src="../../js/spin.min.js"></script>
+<script src="../../js/jquery.spin.js"></script>
+<script src="../../js/common/app.js"></script>
+<script src="../../js/md5.js"></script>
+<script src="../../js/htmljs/changeInfo.js"></script>
+
+<script>
+
+</script>
+
+</body>
+
+</html>

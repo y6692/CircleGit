@@ -1,0 +1,146 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_f9"
+    android:orientation="vertical">
+
+    <!--<FrameLayout-->
+        <!--android:visibility="gone"-->
+        <!--android:id="@+id/titlebar"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/title_bg"-->
+        <!--android:orientation="horizontal" >-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/leftBtn"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:padding="10dp"-->
+            <!--android:src="@drawable/btn_back"-->
+            <!--android:layout_gravity="center_vertical"/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/titleView"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="8pt"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="创建房间"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:padding="5dp"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/rightBtn"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:paddingLeft="20dp"-->
+            <!--android:paddingRight="10dp"-->
+            <!--android:src="@drawable/buttom_btn_contacts_icon"-->
+            <!--android:layout_gravity="center_vertical|right" />-->
+
+    <!--</FrameLayout>-->
+
+    <!--<RelativeLayout-->
+        <!--android:visibility="gone"-->
+        <!--android:id="@+id/searchbar"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/titlebar"-->
+
+        <!--android:layout_marginTop="6dp"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:layout_marginBottom="6dp"-->
+
+
+        <!--android:gravity="center">-->
+        <!--<EditText-->
+            <!--android:id="@+id/searchText"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/input_bg"-->
+            <!--android:singleLine="true"-->
+            <!--android:hint="房间名"-->
+            <!--android:textColorHint="#aaa"-->
+            <!--android:paddingLeft="25dp"/>-->
+    <!--</RelativeLayout>-->
+
+
+    <include layout="@layout/layout_head"/>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/m12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/quanicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/m20"
+            android:paddingRight="@dimen/m10"
+            android:src="@drawable/quanicon"
+        />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/m12"
+        android:paddingBottom="@dimen/m10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+
+        <View style="@style/divider_1px"/>
+        <EditText
+            android:id="@+id/et_name"
+            android:textSize="@dimen/f15"
+            android:textColor="@color/font_black_333"
+            android:textColorHint="@color/font_black_d9"
+            android:padding="@dimen/m12"
+            android:hint="请输入圈名~"
+            android:maxLength="15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:background="@color/transparent"
+            android:gravity="top"/>
+        <View style="@style/divider_1px"/>
+
+        <EditText
+            android:id="@+id/et_description"
+            android:textSize="@dimen/f15"
+            android:textColor="@color/font_black_333"
+            android:textColorHint="@color/font_black_d9"
+            android:padding="@dimen/m12"
+            android:hint="请输入简介~"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/m150"
+            android:maxLines="10"
+            android:background="@color/transparent"
+            android:gravity="top"/>
+
+
+        <ImageView
+            android:id="@+id/camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/m20"
+            android:paddingRight="@dimen/m10"
+            android:src="@mipmap/zp"
+            />
+
+    </LinearLayout>
+
+    <View style="@style/divider_1px"/>
+
+
+
+</LinearLayout>

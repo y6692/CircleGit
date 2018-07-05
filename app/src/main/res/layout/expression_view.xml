@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_gray"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="0dp" >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/m5"
+        android:background="@color/bg_gray" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_emoji"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m140"
+        android:layout_gravity="center" />
+    <LinearLayout
+        android:id="@+id/ll_index"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/m5"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/page_select"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/bg_gray"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:paddingBottom="5dp" >-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/page0_select"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:scaleType="matrix"-->
+            <!--android:src="@drawable/dot_chosed" />-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/page1_select"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:scaleType="matrix"-->
+            <!--android:src="@drawable/dot_nor" />-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/page2_select"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:scaleType="matrix"-->
+            <!--android:src="@drawable/dot_nor" />-->
+    <!--</LinearLayout>-->
+    <!-- 表情 -->
+
+    <LinearLayout
+        android:id="@+id/ll_select_emoji_type"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/btn_pre"
+        android:gravity="left"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/rl_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/theme_color"
+            android:paddingBottom="@dimen/m10"
+            android:paddingLeft="@dimen/m20"
+            android:paddingRight="@dimen/m20"
+            android:paddingTop="@dimen/m10" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="默认"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_gif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/m10"
+            android:paddingLeft="@dimen/m20"
+            android:paddingRight="@dimen/m20"
+            android:paddingTop="@dimen/m10" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="动态"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

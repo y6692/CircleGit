@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/ll_head"
+                    android:paddingLeft="@dimen/m12"
+                    android:paddingRight="@dimen/m12"
+                    android:paddingTop="@dimen/m8"
+                    android:paddingBottom="@dimen/m8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                        <com.sylar.unit.CircularImage
+                            android:id="@+id/contacthead"
+                            android:layout_width="@dimen/m44"
+                            android:layout_height="@dimen/m44"
+                            android:padding="@dimen/m10"
+                            android:src="@mipmap/head"
+                            android:gravity="left"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/nameView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/m17"
+                    android:layout_weight="1"
+                    android:textColor="@color/font_black_a8"
+                    />
+        </LinearLayout>
+
+        <View style="@style/divider_1px"
+            android:layout_marginLeft="@dimen/m60"/>
+
+    </LinearLayout>

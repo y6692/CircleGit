@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>账号与安全</title>
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <link rel="stylesheet" href="../../css/app.css">
+    <style>
+        body{
+            background-color: #f9f9f9;
+        }
+        .mui-content{
+            background-color: #f9f9f9;
+            font-size: 18px;
+        }
+        .mui-content>.mui-table-view{
+            margin-bottom: 20px;
+        }
+        .last-tips{
+            position: absolute;
+            font-size: 15px;
+            color: #666666;
+            margin-top: -15px;
+            margin-left: 15px;
+        }
+        #baohu{
+            height: 15px;
+            width: 15px;
+        }
+        .tips-right {
+            position: absolute;
+            right: 40px;
+            font-size: 15px;
+            color: #666;
+        }
+        .tips-image{
+            position: absolute;
+            transform:translateY(12.5%);
+            left: -20px;
+        }
+
+    </style>
+</head>
+<body>
+<header class="circle-head">
+    <div class="circle-head-left">
+        <span class="circle-head-text" onclick="window.history.go(-1);">返回</span>
+    </div>
+    <div class="circle-head-center">
+        <span class="circle-title">账号与安全</span>
+    </div>
+    <div class="circle-head-right"></div>
+</header>
+<div class="mui-content">
+    <ul class="mui-table-view mui-table-view-chevron">
+        <li class="mui-table-view-cell">
+            <a href="userSafe.html" class="mui-navigate-right">
+                <span>账号保护</span>
+                <span class="tips-right">
+                    <span class="tips-image"><img id="baohu" src="../../img/mine/baohu.png"></span>
+                    <span >已保护</span>
+
+                </span>
+            </a>
+        </li>
+    </ul>
+    <ul class="mui-table-view mui-table-view-chevron">
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">
+                <span>更换手机号</span>
+            </a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a href="userSafeCenter.html" class="mui-navigate-right">
+                <span>安全中心</span>
+            </a>
+        </li>
+    </ul>
+    <ul class="mui-table-view mui-table-view-chevron">
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">
+                <span>安全密码锁定</span>
+            </a>
+        </li>
+    </ul>
+    <div class="last-tips">安全密码锁可以用于：屏幕保护、密聊保护</div>
+
+</div>
+</body>
+</html>

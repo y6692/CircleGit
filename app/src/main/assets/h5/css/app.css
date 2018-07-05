@@ -1,0 +1,167 @@
+/*
+ *这是单独为hello mui准备的个性化css，可以覆盖标准mui的css定义；
+ * 在实际项目开发时，建议为App单独写一个css文件，从而实现项目的自定义皮肤功能；
+ * 
+ * */
+*{
+	padding: 0;
+	margin: 0;
+}
+body, .mui-content{
+	background-color: white;
+}
+.mui-plus header.mui-bar{
+	display: none;
+}
+
+.circle-head~.mui-content{
+	padding-top: 48px;
+}
+
+/*hm开头的表示仅为 Hello MUI示例定义*/
+.hm-description{
+	margin: .5em 0;
+}
+
+.hm-description>li {
+	font-size: 14px;
+	color: #8f8f94;
+}
+
+.mui-btn {
+	padding: 10px;
+}
+.mui-content-padded{
+	padding: 16px;
+}
+hr{
+	border:none;
+	border-top:1px solid gainsboro;
+}
+.load{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -50px;
+	margin-top: -50px;
+	width: 100px;
+	height: 100px;
+	background-color: #6d6d72;
+	opacity: 0.5;
+	border-radius: 10px;
+	display: none;
+}
+.loading{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -40px;
+	margin-top: -40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:80px;
+	height: 80px;
+	background-color: white;
+	opacity: 0.5;
+	vertical-align: middle;
+	border-radius: 15px;
+	display: none;
+}
+header a{
+	color: #31b4ff;
+	width: 78px;
+}
+header a span{
+	font-size: 17px;
+	position: absolute;
+	top: 15px;
+	left: 38px;
+}
+.mui-bar .mui-icon {
+	font-size: 35px;
+	position: relative;
+	z-index: 20;
+	padding-top: 5px;
+}
+.circle-head{
+	background-color: white;
+	display: flex;
+	position: fixed;
+	z-index: 10;
+	right: 0;
+	left: 0;
+	height: 48px;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: solid 1px #e6e6e6;
+	/*box-shadow: 0 1px 6px #ccc;*/
+}
+.circle-head-left{
+	box-sizing: border-box;
+	width: 30%;
+	height: 48px;
+	display: flex;
+	align-items: center;
+}
+.circle-head-center{
+	box-sizing: border-box;
+	flex: 1;
+	height: 48px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.circle-title{
+	font-size: 18px;
+	font-weight: 600;
+}
+.circle-head-right{
+	box-sizing: border-box;
+	width: 30%;
+	height: 48px;
+	padding-right: 12px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.circle-head-left span{
+	padding-left: 25px;
+	background:url("../img/register/back.png") no-repeat 5px;
+}
+.circle-head-text{
+	color: #31b4ff;
+	font-size: 15px;
+}
+.space{
+	height: 12px;
+	background-color: #f2f2f2;
+}
+.divider{
+	height: 1px;
+	background-color: #f2f2f2;
+}
+.font{
+	word-wrap:break-word;
+	white-space: pre-line;
+}
+.font-26-333{
+	font-size: 13px;
+	color: #333;
+}
+.font-26-blue{
+	font-size: 13px;
+	color: #31b4ff;
+}
+.font-36-000{
+	font-size: 18px;
+	color: black;
+}
+.font-26-aaa{
+	font-size: 13px;
+	color: #aaaaaa;
+}
+.emoji-size{
+	width: 15px;
+	height: 15px;
+}

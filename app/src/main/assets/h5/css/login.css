@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #31b4ff;
+}
+.mui-content{
+    background: #31b4ff;
+}
+.logo-container {
+    text-align: center;
+    padding: 50px;
+}
+
+
+.mui-input-row{
+    width: 100%;
+}
+.mui-input-row input{
+    padding-left: 30px;
+    border: none;
+    font-size: 18px;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+.mui-input-row input::-webkit-input-placeholder {
+    color: white;
+    font-size:18px;
+}
+
+#account{
+    background:url("../img/phone_white.png") no-repeat 0px 7px;
+    background-size: 23px;
+
+}
+#password{
+    background:url("../img/pwd_white.png") no-repeat 0px 7px;
+    background-size: 23px;
+}
+
+.mui-content-padded {
+    margin-top: 25px;
+    padding: 16px;
+}
+
+.mui-btn {
+    padding: 10px;
+    color: #31b4ff;
+    border: none;
+}
+
+.link-area {
+    position: absolute;
+    display: table-cell;
+    width: 100%;
+    bottom: 20px;
+    text-align: center;
+
+}
+.link-area a{
+    color: #d0edfe;
+    font-size: 16px;
+}
+.spliter {
+    color: #d0edfe;
+    padding: 0px 3px;
+}
+
+/*#account:focus{*/
+    /*background:url("../img/user2.png") no-repeat 15px 7px;*/
+/*}*/
+/*#password:focus{*/
+    /*background:url("../img/lock2.png") no-repeat 15px 7px;*/
+/*}*/
+

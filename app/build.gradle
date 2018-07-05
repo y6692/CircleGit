@@ -1,28 +1,86 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 26
+    buildToolsVersion '27.0.3'
+
     defaultConfig {
         applicationId "com.example.administrator.circlegit"
-        minSdkVersion 14
-        targetSdkVersion 27
+        minSdkVersion 18
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        ndk {
+            abiFilters 'armeabi'
+        }
     }
+
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
 }
 
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
+
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    provided fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:25.1.1'
+//    implementation files('libs/dom4j-1.6.1.jar')
+//    implementation files('libs/HwPush_SDK_V2705.jar')
+//    implementation files('libs/jcore-android_v1.1.3.jar')
+//    implementation files('libs/com.google.zxing.client.android.captureactivity.jar')
+//    implementation files('libs/MiPush_SDK_Client_3_2_2.jar')
+//    implementation files('libs/locSDK_4.0.jar')
+//    implementation files('libs/gson-1.6.jar')
+//    implementation files('libs/wup-1.0.0.E-SNAPSHOT.jar')
+//    implementation files('libs/gesture-imageview.jar')
+//    implementation files('libs/jpush-android_v3.0.6.jar')
+//    implementation files('libs/universal-image-loader-1.9.3.jar')
+//    implementation files('libs/asmack-android-17-0.8.10.jar')
+//    implementation files('libs/AMap3DMap_5.2.1_AMapNavi_5.2.1_20170710.jar')
+//    implementation files('libs/javacpp.jar')
+//    implementation files('libs/javacv.jar')
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    compile 'com.github.lzyzsd:jsbridge:1.0.4'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.lzy.widget:imagepicker:0.5.5'
+    compile 'com.github.nanchen2251:CompressHelper:1.0.5'
+    compile 'com.yanzhenjie.nohttp:nohttp:1.1.3'
+    compile 'com.yanzhenjie.nohttp:okhttp:1.1.3'
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+    compile 'q.rorbin:badgeview:1.1.2'
+    compile 'com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar'
+    compile 'cn.trinea.android.common:trinea-android-common:4.2.15'
+    compile 'com.amap.api:search:latest.integration'
+    compile 'com.amap.api:location:latest.integration'
+    compile 'com.yanzhenjie:permission:1.1.0'
+    compile 'com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar'
+    compile 'com.googlecode.mp4parser:isoparser:1.0-RC-27'
+    implementation project(':dsbridge')
+    implementation project(':xmpp')
 }
+

@@ -1,0 +1,60 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <FrameLayout
+        android:id="@+id/titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_bg"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/leftBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:padding="@dimen/m10"
+            android:src="@drawable/btn_back"
+            android:layout_gravity="center_vertical"/>
+        <TextView
+            android:id="@+id/titleView"
+            android:textColor="@color/white"
+            android:textSize="@dimen/f8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="圈子"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:padding="@dimen/m5"/>
+        <ImageView
+            android:id="@+id/addBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:paddingLeft="@dimen/m20"
+            android:paddingRight="@dimen/m50"
+            android:src="@drawable/buttom_btn_contacts_icon"
+            android:layout_gravity="center_vertical|right" />
+
+        <ImageView
+            android:id="@+id/rightBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:paddingLeft="@dimen/m20"
+            android:paddingRight="@dimen/m10"
+            android:src="@drawable/buttom_btn_contacts_icon"
+            android:layout_gravity="center_vertical|right" />
+
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/titlebar">
+
+    </ListView>
+
+</RelativeLayout>

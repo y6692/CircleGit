@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="@color/white">
+
+	<TextView
+		android:visibility="gone"
+		android:id="@+id/header"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/m20"
+		android:background="@color/bg_f2"
+		android:paddingBottom="@dimen/m2"
+		android:paddingLeft="@dimen/m10"
+		android:paddingTop="@dimen/m2"
+		android:textColor="@color/font_black_b3b0a8"
+		android:textSize="@dimen/f13" />
+
+
+	<ImageView
+		android:id="@+id/headline"
+		android:layout_width="fill_parent"
+		android:layout_height="@dimen/m1"
+		android:background="@color/bg_e5"
+		/>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal" >
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<LinearLayout
+				android:id="@+id/ll_head"
+				android:paddingLeft="@dimen/m12"
+				android:paddingRight="@dimen/m12"
+				android:layout_marginTop="@dimen/m8"
+				android:layout_marginBottom="@dimen/m8"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+				<ImageView
+					android:id="@+id/contacthead"
+					android:scaleType="centerCrop"
+					android:layout_width="@dimen/m44"
+					android:layout_height="@dimen/m44"
+					android:src="@drawable/chaticon"/>
+			</LinearLayout>
+
+			<TextView
+				android:id="@+id/message_contact_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="@dimen/m60"
+				android:gravity="left"
+				android:textColor="@color/font_black_66"
+				android:textSize="@dimen/f8"
+				/>
+
+			<TextView
+				android:id="@+id/message_contact_username"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="@dimen/m80"
+				android:gravity="left"
+				android:textColor="@color/font_black_66"
+				android:textSize="@dimen/f16"
+				android:layout_alignParentRight="true"
+				android:layout_marginRight="@dimen/m20"
+				/>
+
+		</RelativeLayout>
+	</LinearLayout>
+
+	<View style="@style/divider_1px" />
+
+</LinearLayout>

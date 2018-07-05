@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/layout_head"/>
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m150"
+        android:background="@color/transparent"
+        android:gravity="top"
+        android:hint="我的新动态..."
+        android:maxLines="10"
+        android:padding="@dimen/m12"
+        android:textColor="@color/font_black_333"
+        android:textSize="@dimen/f14" />
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/iv_video"
+        android:layout_width="@dimen/m90"
+        android:layout_height="@dimen/m120"
+        android:layout_margin="@dimen/m12"
+        android:src="@drawable/play"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:choiceMode="singleChoice"
+        android:divider="@null"
+        android:fadingEdge="none"
+        android:listSelector="@android:color/transparent"
+        android:scrollbarStyle="outsideOverlay"
+        app:layoutManager="android.support.v7.widget.GridLayoutManager"
+        app:spanCount="4"
+        tools:listitem="@layout/list_item_image"/>
+
+    <View style="@style/divider_1px" />
+
+    <LinearLayout
+        android:id="@+id/ll_position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/m20"
+            android:paddingTop="@dimen/m10"
+            android:paddingBottom="@dimen/m10"
+            android:text="所在位置"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/m20"
+            android:paddingRight="@dimen/m20"
+            android:paddingTop="@dimen/m10"
+            android:paddingBottom="@dimen/m10"
+            android:text=""
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <View style="@style/divider_1px" />
+
+</LinearLayout>

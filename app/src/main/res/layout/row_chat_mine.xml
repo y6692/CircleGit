@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical" >
+
+     <TextView
+        android:id="@+id/timeView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="@dimen/m10"
+        android:textColor="@color/font_black_a8"/>
+    
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/m5"
+        android:gravity="right"
+        android:paddingLeft="@dimen/m8"
+        android:orientation="horizontal" >
+        
+        <TextView
+        android:id="@+id/soundView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:maxWidth="@dimen/m30"
+        android:paddingBottom="@dimen/m10"
+        android:paddingRight="@dimen/m5"
+        android:paddingTop="@dimen/m10"
+        android:text="1&quot;"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="0dp"
+        >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/nameView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/m3"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="0dp"
+                    android:textColor="@color/font_black_a8"
+                    />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/textimgView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/msgView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/msg_bg_mine"
+                    android:paddingBottom="@dimen/m10"
+                    android:paddingLeft="@dimen/m10"
+                    android:paddingRight="@dimen/m15"
+                    android:paddingTop="@dimen/m10"
+                    android:textSize="@dimen/f15"
+                    android:maxWidth="@dimen/m200"
+                    android:textColor="@color/white"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="0dp"
+                     />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imgView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:visibility="gone"/>
+
+            <FrameLayout
+                android:id="@+id/fl_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                >
+             <ImageView
+                 android:id="@+id/iv_map"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="right"/>
+
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/tv_map"
+                    android:layout_width="@dimen/m200"
+                    android:layout_height="@dimen/m40"
+                    android:text="1235677"
+                    android:textSize="@dimen/f12"
+                    android:layout_gravity="right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/m10"
+                    android:textColor="@color/black"
+                    app:rv_strokeWidth="@dimen/m1"
+                    app:rv_cornerRadius_TL="@dimen/m6"
+                    app:rv_cornerRadius_TR="@dimen/m6"
+                    app:rv_backgroundColor="@color/white"
+                    />
+            </FrameLayout>
+             
+             <ImageView
+                 android:id="@+id/gifImgView"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center"
+                 android:paddingBottom="@dimen/m5"
+                 android:paddingLeft="@dimen/m5"
+                 android:paddingRight="@dimen/m10"
+                 android:paddingTop="@dimen/m5"
+                 android:visibility="gone"/>
+             
+              <ImageView
+                  android:id="@+id/voiceView"
+                  android:layout_width="wrap_content"
+                  android:layout_height="fill_parent"
+                  android:layout_gravity="center"
+                  android:background="@drawable/msg_bg_mine"
+                  android:paddingBottom="@dimen/m10"
+                  android:paddingLeft="@dimen/m10"
+                  android:paddingRight="@dimen/m15"
+                  android:paddingTop="@dimen/m10"
+                  android:layout_marginTop="@dimen/m5"
+                  android:layout_marginBottom="@dimen/m5"
+                  android:src="@drawable/voiceto0"
+                  android:visibility="gone"/>
+
+            <FrameLayout
+                android:id="@+id/fl_movieView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:visibility="gone"
+                >
+                <ImageView
+                    android:id="@+id/iv_movieView"
+                    android:layout_width="@dimen/m90"
+                    android:layout_height="@dimen/m120"
+                    android:layout_gravity="center"
+                    android:paddingBottom="@dimen/m10"
+                    android:paddingLeft="@dimen/m20"
+                    android:paddingRight="@dimen/m20"
+                    android:paddingTop="@dimen/m10"
+                    android:layout_marginTop="@dimen/m5"
+                    android:layout_marginBottom="@dimen/m5"
+                    android:src="@drawable/play"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/f12"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/m10"
+                    android:layout_marginLeft="@dimen/m50"
+                    />
+            </FrameLayout>
+               
+           		 <com.sylar.view.gifView.GifView
+			        android:id="@+id/gifView" 
+			        android:layout_height="wrap_content" 
+			        android:layout_width="wrap_content"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <com.sylar.unit.CircularImage
+                android:id="@+id/headImg"
+                android:layout_width="@dimen/m40"
+                android:layout_height="@dimen/m40"
+           		android:scaleType="fitXY"
+                android:layout_marginBottom="@dimen/m5"
+                android:layout_marginLeft="@dimen/m10"
+                android:layout_marginRight="@dimen/m20"
+                android:layout_marginTop="@dimen/m5" />
+    </LinearLayout>
+
+</LinearLayout>

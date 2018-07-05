@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>修改密码</title>
+    <link href="../../css/mui.min.css" rel="stylesheet" />
+    <link href="../../css/app.css" rel="stylesheet" />
+
+    <style>
+        body, .mui-content{
+            background-color: #f9f9f9;
+        }
+        .mui-input-row{
+            width: 100%;
+        }
+        .mui-input-row input{
+            /*padding-left: 30px;*/
+            border: none;
+            font-size: 18px;
+            border-bottom: 1px solid gainsboro;
+        }
+        .mui-input-row input::-webkit-input-placeholder {
+            color: gainsboro;
+            font-size:18px;
+        }
+        .mui-padd {
+            padding: 0px;
+            padding-top: 20px;
+            margin-top: 20px;
+            background-color: white;
+        }
+        #pwd2{
+            margin-bottom: 0px;
+        }
+        #pwd, #pwd2{
+            /*background:url("../../img/pwd_grey.png") no-repeat 0px 7px;*/
+            /*background-size: 18px;*/
+        }
+        #pwd:focus, #pwd2:focus,#oldpwd:focus{
+            /*background:url("../../img/pwd_blue.png") no-repeat 0px 7px;*/
+            /*background-size: 18px;*/
+            border-bottom: 1px solid #31b4ff;
+        }
+        .div-submit{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+        #submit{
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<header class="circle-head">
+    <div class="circle-head-left">
+        <span class="circle-head-text" onclick="window.history.go(-1);">返回</span>
+    </div>
+    <div class="circle-head-center">
+        <span class="circle-title">修改密码</span>
+    </div>
+    <div class="circle-head-right">
+    </div>
+</header>
+
+<div class="mui-content">
+
+    <div class="mui-padd">
+        <div class="mui-input-row ">
+            <input id='oldpwd' type="password" class="mui-input-clear mui-input"  placeholder="原密码">
+        </div>
+        <div class="mui-input-row ">
+            <input id='pwd' type="password" class="mui-input-clear mui-input"  placeholder="新密码">
+        </div>
+        <div class="mui-input-row">
+            <input id='pwd2' type="password" class="mui-input-clear mui-input" placeholder="确认密码">
+        </div>
+    </div>
+    <div class="div-submit">
+        <button id='submit' class="mui-btn mui-btn-block mui-btn-primary">
+            确认修改
+        </button>
+    </div>
+    <div class="load"></div>
+</div>
+
+<script src="../../js/mui.min.js"></script>
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<script src="../../js/spin.min.js"></script>
+<script src="../../js/jquery.spin.js"></script>
+<script src="../../js/common/app.js"></script>
+<script src="../../js/md5.js"></script>
+<script src="../../js/htmljs/changePwd.js"></script>
+
+<script>
+
+</script>
+
+</body>
+
+</html>
